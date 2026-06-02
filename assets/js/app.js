@@ -12,18 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
   updateNavbarState();
   window.addEventListener("scroll", updateNavbarState);
 
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  const currentUrl = new URL(window.location.href);
+  const currentPath = currentUrl.pathname.split("/").pop() || "index.html";
+  const currentHash = currentUrl.hash;
+  const effectiveHash = currentPath === "academic.html" && !currentHash ? "#calendar" : currentHash;
 
-  document.querySelectorAll(".nav-link").forEach((link) => {
-    const linkPath = link.getAttribute("href");
+  document.querySelectorAll(".nav-link, .dropdown-item").forEach((link) => {
+    const linkHref = link.getAttribute("href");
 
-    if (!linkPath || linkPath.startsWith("#") || linkPath === "") {
+    if (!linkHref || linkHref.startsWith("#")) {
       return;
     }
 
-    const normalizedLinkPath = linkPath.split("#")[0] || "index.html";
+    const linkUrl = new URL(linkHref, window.location.href);
+    const normalizedLinkPath = linkUrl.pathname.split("/").pop() || "index.html";
+    const linkHash = linkUrl.hash;
 
-    if (normalizedLinkPath === currentPath) {
+    if (normalizedLinkPath === currentPath && (!linkHash || linkHash === effectiveHash)) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
 
@@ -99,6 +104,78 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.row > [class*="col"] .animate-fade-up').forEach((element, index) => {
     element.style.transitionDelay = `${(index % 4) * 0.1}s`;
   });
+
+  document.querySelectorAll('.teacher-grid__item.animate-fade-up').forEach((element, index) => {
+    element.style.transitionDelay = `${(index % 4) * 0.1}s`;
+  });
+
+  const teacherSearch = document.getElementById("teacherSearch");
+  const teacherCards = [...document.querySelectorAll(".teacher-card[data-department]")];
+  const filterTabs = [...document.querySelectorAll(".filter-tab[data-department]")];
+  const noResultsMessage = document.getElementById("teacherNoResults");
+  const resultsCount = document.getElementById("teacherResultsCount");
+
+  if (teacherSearch && teacherCards.length && filterTabs.length) {
+    let activeDepartment = "all";
+    let searchTimeout = null;
+
+    const updateResultsLabel = (visibleCount) => {
+      if (resultsCount) {
+        resultsCount.textContent = `মোট ${visibleCount} জন শিক্ষক পাওয়া গেছে`;
+      }
+    };
+
+    const applyTeacherFilters = () => {
+      const query = teacherSearch.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      teacherCards.forEach((card) => {
+        const name = (card.dataset.name || "").toLowerCase();
+        const subject = (card.dataset.subject || "").toLowerCase();
+        const department = card.dataset.department || "";
+
+        const matchesSearch = !query || name.includes(query) || subject.includes(query);
+        const matchesDepartment = activeDepartment === "all" || department === activeDepartment;
+        const shouldShow = matchesSearch && matchesDepartment;
+        const cardWrapper = card.closest(".teacher-grid__item") || card.parentElement;
+
+        if (cardWrapper) {
+          cardWrapper.style.display = shouldShow ? "" : "none";
+        }
+
+        if (shouldShow) {
+          visibleCount += 1;
+        }
+      });
+
+      if (noResultsMessage) {
+        noResultsMessage.classList.toggle("is-visible", visibleCount === 0);
+      }
+
+      updateResultsLabel(visibleCount);
+    };
+
+    filterTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        activeDepartment = tab.dataset.department || "all";
+
+        filterTabs.forEach((button) => {
+          const isActive = button === tab;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        applyTeacherFilters();
+      });
+    });
+
+    teacherSearch.addEventListener("input", () => {
+      window.clearTimeout(searchTimeout);
+      searchTimeout = window.setTimeout(applyTeacherFilters, 180);
+    });
+
+    applyTeacherFilters();
+  }
 
   const heroSliderElement = document.querySelector(".hero-slider");
 

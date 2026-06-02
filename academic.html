@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="আদর্শ উচ্চ বিদ্যালয় ও কলেজ — একাডেমিক তথ্য, ক্যালেন্ডার, রুটিন, সিলেবাস, পরীক্ষা ও ফলাফল।">
+  <meta property="og:title" content="একাডেমিক | আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+  <meta property="og:type" content="website">
+  <title>একাডেমিক | আদর্শ উচ্চ বিদ্যালয় ও কলেজ</title>
+  <link rel="canonical" href="https://www.adarshaschool.edu.bd/academic.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    .page-hero {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    }
+
+    .page-hero h1 {
+      margin: 0 0 4px;
+      color: var(--white);
+      font-family: var(--font-bengali);
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .academic-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--white-75);
+      font-size: 13px;
+    }
+
+    .academic-breadcrumb a {
+      color: var(--white-75);
+    }
+
+    .academic-breadcrumb a:hover {
+      color: var(--white);
+    }
+
+    .academic-breadcrumb__current {
+      color: var(--white-95);
+    }
+
+    .academic-page__subtitle {
+      margin: 0;
+      color: var(--white-75);
+      font-size: 14px;
+    }
+
+    .academic-tabs-section {
+      padding: 56px 0;
+      background: var(--gray-50);
+    }
+
+    .academic-tab-nav {
+      position: sticky;
+      top: 70px;
+      z-index: 100;
+      padding: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-nav-scroll {
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .academic-tab-nav .nav-link {
+      flex: 0 0 auto;
+      padding: 14px 20px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      border-radius: 0;
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 13.5px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .academic-tab-nav .nav-link:hover {
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .academic-tab-nav .nav-link.active {
+      color: var(--primary);
+      background: transparent;
+      border-bottom-color: var(--primary);
+    }
+
+    .academic-tabs-section .section-header {
+      margin-bottom: 40px;
+    }
+
+    .academic-tabs-section .section-header__underline {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 50%, var(--accent) 50%);
+    }
+
+    .academic-card-shell {
+      height: 100%;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .academic-table-wrap,
+    .results-table-wrap,
+    .routine-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .academic-table,
+    .results-table,
+    .routine-table {
+      margin: 0;
+      font-family: var(--font-bengali);
+    }
+
+    .academic-table thead th,
+    .results-table thead th,
+    .routine-table thead th {
+      padding: 12px 16px;
+      border: 0;
+      color: var(--white);
+      background: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .academic-table tbody td,
+    .results-table tbody td,
+    .routine-table tbody td {
+      padding: 11px 14px;
+      vertical-align: middle;
+      border-color: var(--border-color);
+      font-size: 13.5px;
+    }
+
+    .academic-table tbody tr:hover,
+    .results-table tbody tr:hover,
+    .routine-table tbody tr:hover {
+      background: var(--primary-subtle);
+    }
+
+    .academic-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .academic-badge--success {
+      color: var(--success);
+      background: var(--success-light);
+    }
+
+    .academic-badge--primary {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .academic-badge--warning {
+      color: var(--warning);
+      background: var(--warning-light);
+    }
+
+    .academic-badge--danger {
+      color: var(--danger);
+      background: var(--danger-light);
+    }
+
+    .academic-badge--accent {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .important-date-card {
+      height: 100%;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .important-date-card__title {
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .important-date-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .important-date-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .date-box {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .date-box__day {
+      line-height: 1;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .date-box__month {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .important-date-item__title {
+      margin: 0 0 4px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .important-date-item__tag {
+      display: inline-flex;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .download-row {
+      margin-top: 20px;
+    }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border: 0;
+      border-radius: var(--radius-sm);
+      background: var(--primary);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .btn-download:hover {
+      color: var(--white);
+      background: var(--primary-hover);
+    }
+
+    .routine-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .routine-btn {
+      padding: 10px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .routine-btn:hover,
+    .routine-btn.active {
+      color: var(--white);
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .routine-table-wrap {
+      margin-bottom: 18px;
+    }
+
+    .routine-table td {
+      text-align: center;
+      font-size: 12.5px;
+    }
+
+    .routine-break-row td {
+      background: var(--warning-light);
+      color: var(--warning);
+      font-weight: 600;
+    }
+
+    .subject-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 72px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .subject-chip--primary {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .subject-chip--success {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .subject-chip--warning {
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+
+    .subject-chip--accent {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .subject-chip--muted {
+      background: var(--gray-100);
+      color: var(--text-secondary);
+    }
+
+    .syllabus-filter-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .syllabus-filter-nav .nav-link {
+      padding: 10px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .syllabus-filter-nav .nav-link:hover,
+    .syllabus-filter-nav .nav-link.active {
+      color: var(--primary);
+      background: var(--primary-subtle);
+      border-color: var(--primary-border);
+    }
+
+    .syllabus-card {
+      height: 100%;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .syllabus-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .syllabus-card__icon {
+      color: var(--primary);
+      font-size: 24px;
+    }
+
+    .syllabus-card__title {
+      margin: 10px 0 6px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .syllabus-card__range {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .syllabus-card__chapters {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .syllabus-card__chapters li {
+      padding: 5px 0;
+      border-bottom: 1px dashed var(--border-color);
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 12.5px;
+    }
+
+    .syllabus-card__chapters li:last-child {
+      border-bottom: 0;
+    }
+
+    .syllabus-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .syllabus-pane {
+      padding: 12px 0 0;
+    }
+
+    .grading-card,
+    .exam-rules-card,
+    .result-filter-card,
+    .result-stat-card,
+    .promotion-rule-card {
+      height: 100%;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .grading-card,
+    .exam-rules-card {
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .grading-card__title,
+    .exam-rules-card__title,
+    .result-filter-card__title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .grading-table {
+      width: 100%;
+      margin: 0;
+      font-family: var(--font-bengali);
+      font-size: 13px;
+    }
+
+    .grading-table tr {
+      border-left: 4px solid transparent;
+    }
+
+    .grading-table__row--a-plus {
+      border-left-color: var(--success);
+    }
+
+    .grading-table__row--a {
+      border-left-color: var(--primary);
+    }
+
+    .grading-table__row--a-minus {
+      border-left-color: var(--primary-light);
+    }
+
+    .grading-table__row--b {
+      border-left-color: var(--warning);
+    }
+
+    .grading-table__row--c {
+      border-left-color: var(--warning-light);
+    }
+
+    .grading-table__row--d {
+      border-left-color: var(--accent);
+    }
+
+    .grading-table__row--f {
+      border-left-color: var(--danger);
+    }
+
+    .grading-table td,
+    .grading-table th {
+      padding: 10px 12px;
+      vertical-align: middle;
+      border-color: var(--border-color);
+    }
+
+    .grading-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .grading-pill--success {
+      color: var(--success);
+      background: var(--success-light);
+    }
+
+    .grading-pill--primary {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .grading-pill--warning {
+      color: var(--warning);
+      background: var(--warning-light);
+    }
+
+    .grading-pill--accent {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .grading-pill--danger {
+      color: var(--danger);
+      background: var(--danger-light);
+    }
+
+    .exam-rule-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .exam-rule-list li {
+      margin-bottom: 10px;
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 13.5px;
+      line-height: 1.7;
+    }
+
+    .accordion-button {
+      font-family: var(--font-bengali);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: var(--primary);
+      background: var(--primary-subtle);
+      box-shadow: none;
+    }
+
+    .accordion-button::after {
+      filter: none;
+    }
+
+    .exam-data-table {
+      margin-bottom: 0;
+      font-family: var(--font-bengali);
+      font-size: 13px;
+    }
+
+    .exam-data-table thead th {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .exam-data-table tbody tr:nth-child(even) {
+      background: var(--gray-50);
+    }
+
+    .result-filter-card {
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .result-stat-card {
+      padding: 20px;
+      text-align: center;
+      border-top: 4px solid var(--primary);
+      transition: var(--transition);
+    }
+
+    .result-stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .result-stat-card--success {
+      border-top-color: var(--success);
+    }
+
+    .result-stat-card--warning {
+      border-top-color: var(--warning);
+    }
+
+    .result-stat-card--accent {
+      border-top-color: var(--accent);
+    }
+
+    .result-stat-card__icon {
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-size: 24px;
+    }
+
+    .result-stat-card--success .result-stat-card__icon {
+      color: var(--success);
+    }
+
+    .result-stat-card--warning .result-stat-card__icon {
+      color: var(--warning);
+    }
+
+    .result-stat-card--accent .result-stat-card__icon {
+      color: var(--accent);
+    }
+
+    .result-stat-card__number {
+      display: block;
+      color: var(--primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .result-stat-card--success .result-stat-card__number {
+      color: var(--success);
+    }
+
+    .result-stat-card--warning .result-stat-card__number {
+      color: var(--warning);
+    }
+
+    .result-stat-card--accent .result-stat-card__number {
+      color: var(--accent);
+    }
+
+    .result-stat-card__label {
+      margin-top: 6px;
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 13px;
+    }
+
+    .results-table thead th {
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .results-table tbody td {
+      text-align: center;
+    }
+
+    .results-table tbody tr:nth-child(even) {
+      background: var(--gray-50);
+    }
+
+    .results-table__download {
+      color: var(--danger);
+      font-size: 18px;
+    }
+
+    .pass-progress {
+      min-width: 120px;
+      height: 8px;
+      background: var(--gray-100);
+    }
+
+    .pass-progress .progress-bar {
+      border-radius: 999px;
+      background: var(--success);
+    }
+
+    .promotion-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .promotion-rule-card {
+      padding: 28px;
+      margin-bottom: 24px;
+      border-left: 5px solid var(--primary);
+      transition: var(--transition);
+    }
+
+    .promotion-rule-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .promotion-rule-card--success {
+      border-left-color: var(--success);
+    }
+
+    .promotion-rule-card--warning {
+      border-left-color: var(--warning);
+    }
+
+    .promotion-rule-card--accent {
+      border-left-color: var(--accent);
+    }
+
+    .promotion-rule-card__title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .promotion-rule-card__icon {
+      color: var(--primary);
+      font-size: 22px;
+    }
+
+    .promotion-rule-card--success .promotion-rule-card__icon {
+      color: var(--success);
+    }
+
+    .promotion-rule-card--warning .promotion-rule-card__icon {
+      color: var(--warning);
+    }
+
+    .promotion-rule-card--accent .promotion-rule-card__icon {
+      color: var(--accent);
+    }
+
+    .promotion-rule-card__body,
+    .promotion-rule-card__list {
+      margin: 0;
+      font-family: var(--font-bengali);
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      line-height: 1.8;
+    }
+
+    .promotion-rule-card__list {
+      padding-left: 18px;
+    }
+
+    .promotion-rule-card__list li {
+      margin-bottom: 10px;
+    }
+
+    .promotion-rule-table {
+      width: 100%;
+      margin-top: 12px;
+      font-family: var(--font-bengali);
+      font-size: 13px;
+    }
+
+    .promotion-rule-table th,
+    .promotion-rule-table td {
+      padding: 10px 12px;
+      vertical-align: middle;
+      border-color: var(--border-color);
+    }
+
+    .promotion-rule-table thead th {
+      background: var(--gray-50);
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .promotion-rule-table tbody tr:nth-child(even) {
+      background: var(--gray-50);
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .animate-fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .focus-visible-ring:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 1199.98px) {
+      .academic-tab-nav .nav-link {
+        padding: 13px 16px;
+      }
+
+      .academic-tab-nav .nav-link.active {
+        border-bottom-width: 3px;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .academic-tabs-section {
+        padding: 48px 0;
+      }
+
+      .academic-card-shell,
+      .important-date-card,
+      .result-filter-card,
+      .grading-card,
+      .exam-rules-card,
+      .promotion-rule-card {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .page-hero {
+        min-height: 180px;
+      }
+
+      .page-hero h1 {
+        font-size: 24px;
+      }
+
+      .academic-tab-nav {
+        top: 70px;
+      }
+
+      .academic-tab-nav .nav-link {
+        padding: 12px 14px;
+      }
+
+      .academic-tabs-section .section-header__title {
+        font-size: 22px;
+      }
+
+      .routine-switcher,
+      .syllabus-filter-nav {
+        gap: 8px;
+      }
+
+      .routine-btn,
+      .syllabus-filter-nav .nav-link {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .results-table-wrap {
+        overflow-x: auto;
+      }
+
+      .pass-progress {
+        min-width: 96px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .academic-tabs-section {
+        padding: 40px 0;
+      }
+
+      .academic-card-shell,
+      .important-date-card,
+      .result-filter-card,
+      .grading-card,
+      .exam-rules-card,
+      .promotion-rule-card {
+        padding: 18px;
+      }
+
+      .important-date-item {
+        gap: 12px;
+      }
+
+      .date-box {
+        width: 44px;
+        height: 44px;
+      }
+
+      .date-box__day {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body class="academic-page">
+  <header>
+    <div class="topbar d-none d-xl-flex">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="topbar__left">
+          <span><span aria-hidden="true">🇧🇩</span> গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</span>
+          <span>|</span>
+          <span>জাতীয় শিক্ষা সপ্তাহ ২০২৫</span>
+        </div>
+        <div class="topbar__right">
+          <span><i class="bi bi-telephone-fill"></i> +880 2-XXXXXXXX</span>
+          <span><i class="bi bi-envelope-fill"></i> info@adarshaschool.edu.bd</span>
+          <div class="topbar__social">
+            <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-navbar navbar navbar-expand-xl">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+          <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+          <span>
+            <span class="navbar-brand__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</span>
+            <span class="navbar-brand__subtitle">Adarsha High School &amp; College, Dhaka</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolNavbar" aria-controls="schoolNavbar" aria-expanded="false" aria-label="নেভিগেশন খুলুন">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="schoolNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">আমাদের বিদ্যালয়</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="about.html#history">ইতিহাস</a></li>
+                <li><a class="dropdown-item" href="about.html#mission">লক্ষ্য ও উদ্দেশ্য</a></li>
+                <li><a class="dropdown-item" href="institute-info.html">প্রতিষ্ঠান তথ্য</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">প্রশাসন</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="head-teacher.html">প্রধান শিক্ষকের বাণী</a></li>
+                <li><a class="dropdown-item" href="committee.html">পরিচালনা কমিটি</a></li>
+                <li><a class="dropdown-item" href="teachers.html">শিক্ষক-কর্মচারী</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">একাডেমিক</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="academic.html#calendar" aria-current="page">একাডেমিক ক্যালেন্ডার</a></li>
+                <li><a class="dropdown-item" href="academic.html#routine">শ্রেণি রুটিন</a></li>
+                <li><a class="dropdown-item" href="academic.html#syllabus">সিলেবাস</a></li>
+                <li><a class="dropdown-item" href="academic.html#exam">পরীক্ষার তথ্য</a></li>
+                <li><a class="dropdown-item" href="academic.html#results">ফলাফল</a></li>
+                <li><a class="dropdown-item" href="academic.html#promotion">প্রমোশন বিধি</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="admission.html">ভর্তি</a></li>
+            <li class="nav-item"><a class="nav-link" href="notices.html">নোটিশ বোর্ড</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">গ্যালারি</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">যোগাযোগ</a></li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a class="btn-school-accent" href="admission.html"><i class="bi bi-pencil-square me-1"></i> ভর্তি আবেদন</a>
+            <button class="btn-navbar-icon" type="button" aria-label="অনুসন্ধান">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero" aria-label="একাডেমিক">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb academic-breadcrumb mb-2">
+            <li class="breadcrumb-item"><a href="index.html">হোম</a></li>
+            <li class="breadcrumb-item academic-breadcrumb__current">একাডেমিক</li>
+          </ol>
+        </nav>
+        <h1>একাডেমিক তথ্য</h1>
+        <p class="academic-page__subtitle" lang="en">Academic Information</p>
+      </div>
+    </section>
+
+    <section class="academic-tabs-section">
+      <div class="container">
+        <div class="tab-nav-scroll">
+          <ul class="nav academic-tab-nav flex-nowrap w-100" id="academicTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendar" type="button" role="tab" aria-controls="calendar" aria-selected="true"><i class="bi bi-calendar3 me-2"></i>একাডেমিক ক্যালেন্ডার</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="routine-tab" data-bs-toggle="tab" data-bs-target="#routine" type="button" role="tab" aria-controls="routine" aria-selected="false"><i class="bi bi-clock me-2"></i>শ্রেণি রুটিন</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="syllabus-tab" data-bs-toggle="tab" data-bs-target="#syllabus" type="button" role="tab" aria-controls="syllabus" aria-selected="false"><i class="bi bi-journal-text me-2"></i>সিলেবাস</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="exam-tab" data-bs-toggle="tab" data-bs-target="#exam" type="button" role="tab" aria-controls="exam" aria-selected="false"><i class="bi bi-pencil me-2"></i>পরীক্ষার তথ্য</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="results-tab" data-bs-toggle="tab" data-bs-target="#results" type="button" role="tab" aria-controls="results" aria-selected="false"><i class="bi bi-bar-chart me-2"></i>ফলাফল</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="promotion-tab" data-bs-toggle="tab" data-bs-target="#promotion" type="button" role="tab" aria-controls="promotion" aria-selected="false"><i class="bi bi-arrow-up-circle me-2"></i>প্রমোশন বিধি</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-content pt-5" id="academicTabContent">
+          <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="calendar-tab" tabindex="0">
+            <div class="section-header animate-fade-up">
+              <h2 class="section-header__title">একাডেমিক ক্যালেন্ডার ২০২৫</h2>
+              <p class="section-header__subtitle" lang="en">Academic Calendar 2025</p>
+              <div class="section-header__underline"></div>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-lg-8">
+                <div class="academic-card-shell animate-fade-up">
+                  <div class="academic-table-wrap">
+                    <table class="table table-hover academic-table">
+                      <caption class="visually-hidden">একাডেমিক ক্যালেন্ডার ২০২৫</caption>
+                      <thead>
+                        <tr>
+                          <th>মাস</th>
+                          <th>তারিখ</th>
+                          <th>কার্যক্রম</th>
+                          <th>ধরন</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td>জানুয়ারি</td><td>১–৫ জানুয়ারি</td><td>বার্ষিক পরীক্ষার ফলাফল প্রকাশ</td><td><span class="academic-badge academic-badge--success">ফলাফল</span></td></tr>
+                        <tr><td>জানুয়ারি</td><td>১৫ জানুয়ারি</td><td>ভর্তি কার্যক্রম শুরু</td><td><span class="academic-badge academic-badge--primary">ভর্তি</span></td></tr>
+                        <tr><td>ফেব্রুয়ারি</td><td>১ ফেব্রুয়ারি</td><td>নতুন শিক্ষাবর্ষ শুরু</td><td><span class="academic-badge academic-badge--primary">শিক্ষাবর্ষ</span></td></tr>
+                        <tr><td>ফেব্রুয়ারি</td><td>২১ ফেব্রুয়ারি</td><td>আন্তর্জাতিক মাতৃভাষা দিবস</td><td><span class="academic-badge academic-badge--warning">অনুষ্ঠান</span></td></tr>
+                        <tr><td>মার্চ</td><td>২৬ মার্চ</td><td>স্বাধীনতা দিবস</td><td><span class="academic-badge academic-badge--warning">ছুটি</span></td></tr>
+                        <tr><td>এপ্রিল</td><td>১–১৫ এপ্রিল</td><td>অর্ধবার্ষিক পরীক্ষা</td><td><span class="academic-badge academic-badge--danger">পরীক্ষা</span></td></tr>
+                        <tr><td>এপ্রিল</td><td>১৪ এপ্রিল</td><td>বাংলা নববর্ষ</td><td><span class="academic-badge academic-badge--warning">ছুটি</span></td></tr>
+                        <tr><td>জুন</td><td>১৫–৩০ জুন</td><td>গ্রীষ্মকালীন ছুটি</td><td><span class="academic-badge academic-badge--warning">ছুটি</span></td></tr>
+                        <tr><td>আগস্ট</td><td>১৫ আগস্ট</td><td>জাতীয় শোক দিবস</td><td><span class="academic-badge academic-badge--warning">ছুটি</span></td></tr>
+                        <tr><td>অক্টোবর</td><td>১–১৫ অক্টোবর</td><td>প্রাক-নির্বাচনী পরীক্ষা</td><td><span class="academic-badge academic-badge--danger">পরীক্ষা</span></td></tr>
+                        <tr><td>নভেম্বর</td><td>১–৩০ নভেম্বর</td><td>বার্ষিক পরীক্ষা</td><td><span class="academic-badge academic-badge--danger">পরীক্ষা</span></td></tr>
+                        <tr><td>ডিসেম্বর</td><td>৩১ ডিসেম্বর</td><td>বার্ষিক পুরস্কার বিতরণী</td><td><span class="academic-badge academic-badge--success">অনুষ্ঠান</span></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="download-row">
+                    <a class="btn-download" href="downloads.html"><i class="bi bi-download"></i>একাডেমিক ক্যালেন্ডার ডাউনলোড করুন</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <aside class="important-date-card animate-fade-up">
+                  <h3 class="important-date-card__title">গুরুত্বপূর্ণ তারিখ</h3>
+                  <div class="important-date-item">
+                    <div class="date-box"><span class="date-box__day">01</span><span class="date-box__month">নভে</span></div>
+                    <div>
+                      <p class="important-date-item__title">বার্ষিক পরীক্ষা শুরু</p>
+                      <span class="important-date-item__tag">পরীক্ষা</span>
+                    </div>
+                  </div>
+                  <div class="important-date-item">
+                    <div class="date-box"><span class="date-box__day">15</span><span class="date-box__month">নভে</span></div>
+                    <div>
+                      <p class="important-date-item__title">ব্যবহারিক পরীক্ষা</p>
+                      <span class="important-date-item__tag">পরীক্ষা</span>
+                    </div>
+                  </div>
+                  <div class="important-date-item">
+                    <div class="date-box"><span class="date-box__day">31</span><span class="date-box__month">ডিসে</span></div>
+                    <div>
+                      <p class="important-date-item__title">বার্ষিক পুরস্কার বিতরণী</p>
+                      <span class="important-date-item__tag">অনুষ্ঠান</span>
+                    </div>
+                  </div>
+                  <div class="important-date-item">
+                    <div class="date-box"><span class="date-box__day">15</span><span class="date-box__month">জানু</span></div>
+                    <div>
+                      <p class="important-date-item__title">ভর্তি আবেদন শেষ তারিখ</p>
+                      <span class="important-date-item__tag">ভর্তি</span>
+                    </div>
+                  </div>
+                  <div class="important-date-item">
+                    <div class="date-box"><span class="date-box__day">01</span><span class="date-box__month">ফেব্রু</span></div>
+                    <div>
+                      <p class="important-date-item__title">নতুন শিক্ষাবর্ষ শুরু</p>
+                      <span class="important-date-item__tag">শিক্ষাবর্ষ</span>
+                    </div>
+                  </div>
+                  <div class="important-date-item">
+                    <div class="date-box"><span class="date-box__day">21</span><span class="date-box__month">ফেব্রু</span></div>
+                    <div>
+                      <p class="important-date-item__title">আন্তর্জাতিক মাতৃভাষা দিবস</p>
+                      <span class="important-date-item__tag">অনুষ্ঠান</span>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="routine" role="tabpanel" aria-labelledby="routine-tab" tabindex="0">
+            <div class="section-header animate-fade-up">
+              <h2 class="section-header__title">শ্রেণি রুটিন ২০২৫</h2>
+              <p class="section-header__subtitle" lang="en">Class Routine 2025</p>
+              <div class="section-header__underline"></div>
+            </div>
+
+            <div class="academic-card-shell animate-fade-up">
+              <div class="routine-switcher">
+                <button class="routine-btn active" type="button" data-class="6">ষষ্ঠ শ্রেণি</button>
+                <button class="routine-btn" type="button" data-class="7">সপ্তম শ্রেণি</button>
+                <button class="routine-btn" type="button" data-class="8">অষ্টম শ্রেণি</button>
+                <button class="routine-btn" type="button" data-class="9">নবম শ্রেণি</button>
+                <button class="routine-btn" type="button" data-class="10">দশম শ্রেণি</button>
+              </div>
+
+              <div class="routine-table-wrap" id="routine-6">
+                <table class="table routine-table">
+                  <thead>
+                    <tr>
+                      <th>সময়</th>
+                      <th>সোমবার</th>
+                      <th>মঙ্গলবার</th>
+                      <th>বুধবার</th>
+                      <th>বৃহস্পতিবার</th>
+                      <th>শুক্রবার</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>৯:০০–৯:৪৫</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td></tr>
+                    <tr><td>৯:৪৫–১০:৩০</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td></tr>
+                    <tr class="routine-break-row"><td>১০:৩০–১০:৪৫</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১০:৪৫–১১:৩০</td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td></tr>
+                    <tr><td>১১:৩০–১২:১৫</td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--accent">চারু ও কারুকলা</span></td></tr>
+                    <tr class="routine-break-row"><td>১২:১৫–১২:৩০</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১২:৩০–১:১৫</td><td><span class="subject-chip subject-chip--accent">চারু ও কারুকলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--muted">শারীরিক শিক্ষা</span></td></tr>
+                    <tr><td>১:১৫–২:০০</td><td><span class="subject-chip subject-chip--muted">শারীরিক শিক্ষা</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--accent">প্রকল্প</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="routine-table-wrap d-none" id="routine-7">
+                <table class="table routine-table">
+                  <thead>
+                    <tr><th>সময়</th><th>সোমবার</th><th>মঙ্গলবার</th><th>বুধবার</th><th>বৃহস্পতিবার</th><th>শুক্রবার</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>৯:০০–৯:৪৫</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td></tr>
+                    <tr><td>৯:৪৫–১০:৩০</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td></tr>
+                    <tr class="routine-break-row"><td>১০:৩০–১০:৪৫</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১০:৪৫–১১:৩০</td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td></tr>
+                    <tr><td>১১:৩০–১২:১৫</td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--accent">চারু ও কারুকলা</span></td></tr>
+                    <tr class="routine-break-row"><td>১২:১৫–১২:৩০</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১২:৩০–১:১৫</td><td><span class="subject-chip subject-chip--accent">চারু ও কারুকলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--muted">শারীরিক শিক্ষা</span></td></tr>
+                    <tr><td>১:১৫–২:০০</td><td><span class="subject-chip subject-chip--muted">শারীরিক শিক্ষা</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--accent">প্রকল্প</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="routine-table-wrap d-none" id="routine-8">
+                <table class="table routine-table">
+                  <thead>
+                    <tr><th>সময়</th><th>সোমবার</th><th>মঙ্গলবার</th><th>বুধবার</th><th>বৃহস্পতিবার</th><th>শুক্রবার</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>৯:০০–৯:৪৫</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td></tr>
+                    <tr><td>৯:৪৫–১০:৩০</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td></tr>
+                    <tr class="routine-break-row"><td>১০:৩০–১০:৪৫</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১০:৪৫–১১:৩০</td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td></tr>
+                    <tr><td>১১:৩০–১২:১৫</td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--warning">সমাজ</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--accent">চারু ও কারুকলা</span></td></tr>
+                    <tr class="routine-break-row"><td>১২:১৫–১২:৩০</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১২:৩০–১:১৫</td><td><span class="subject-chip subject-chip--accent">চারু ও কারুকলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--success">গণিত</span></td><td><span class="subject-chip subject-chip--muted">শারীরিক শিক্ষা</span></td></tr>
+                    <tr><td>১:১৫–২:০০</td><td><span class="subject-chip subject-chip--muted">শারীরিক শিক্ষা</span></td><td><span class="subject-chip subject-chip--warning">বিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--accent">প্রকল্প</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="routine-table-wrap d-none" id="routine-9">
+                <table class="table routine-table">
+                  <thead>
+                    <tr><th>সময়</th><th>সোমবার</th><th>মঙ্গলবার</th><th>বুধবার</th><th>বৃহস্পতিবার</th><th>শুক্রবার</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>৯:০০–৯:৪৫</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--success">উচ্চতর গণিত</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td></tr>
+                    <tr><td>৯:৪৫–১০:৩০</td><td><span class="subject-chip subject-chip--warning">জীববিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td></tr>
+                    <tr class="routine-break-row"><td>১০:৩০–১০:৪৫</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১০:৪৫–১১:৩০</td><td><span class="subject-chip subject-chip--success">উচ্চতর গণিত</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td></tr>
+                    <tr><td>১১:৩০–১২:১৫</td><td><span class="subject-chip subject-chip--warning">জীববিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td></tr>
+                    <tr class="routine-break-row"><td>১২:১৫–১২:৩০</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১২:৩০–১:১৫</td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--success">উচ্চতর গণিত</span></td><td><span class="subject-chip subject-chip--warning">জীববিজ্ঞান</span></td></tr>
+                    <tr><td>১:১৫–২:০০</td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--accent">প্রশ্ন অনুশীলন</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--muted">রিভিশন</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="routine-table-wrap d-none" id="routine-10">
+                <table class="table routine-table">
+                  <thead>
+                    <tr><th>সময়</th><th>সোমবার</th><th>মঙ্গলবার</th><th>বুধবার</th><th>বৃহস্পতিবার</th><th>শুক্রবার</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>৯:০০–৯:৪৫</td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--success">উচ্চতর গণিত</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td></tr>
+                    <tr><td>৯:৪৫–১০:৩০</td><td><span class="subject-chip subject-chip--warning">জীববিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td></tr>
+                    <tr class="routine-break-row"><td>১০:৩০–১০:৪৫</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১০:৪৫–১১:৩০</td><td><span class="subject-chip subject-chip--success">উচ্চতর গণিত</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td></tr>
+                    <tr><td>১১:৩০–১২:১৫</td><td><span class="subject-chip subject-chip--warning">জীববিজ্ঞান</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td></tr>
+                    <tr class="routine-break-row"><td>১২:১৫–১২:৩০</td><td colspan="5">বিরতি</td></tr>
+                    <tr><td>১২:৩০–১:১৫</td><td><span class="subject-chip subject-chip--accent">আইসিটি</span></td><td><span class="subject-chip subject-chip--success">পদার্থবিজ্ঞান</span></td><td><span class="subject-chip subject-chip--warning">রসায়ন</span></td><td><span class="subject-chip subject-chip--success">উচ্চতর গণিত</span></td><td><span class="subject-chip subject-chip--warning">জীববিজ্ঞান</span></td></tr>
+                    <tr><td>১:১৫–২:০০</td><td><span class="subject-chip subject-chip--muted">ধর্ম</span></td><td><span class="subject-chip subject-chip--primary">ইংরেজি</span></td><td><span class="subject-chip subject-chip--accent">প্রশ্ন অনুশীলন</span></td><td><span class="subject-chip subject-chip--primary">বাংলা</span></td><td><span class="subject-chip subject-chip--muted">রিভিশন</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="download-row">
+                <a class="btn-download" href="downloads.html"><i class="bi bi-download"></i>রুটিন ডাউনলোড করুন (PDF)</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="syllabus" role="tabpanel" aria-labelledby="syllabus-tab" tabindex="0">
+            <div class="section-header animate-fade-up">
+              <h2 class="section-header__title">সিলেবাস ও পাঠ্যক্রম</h2>
+              <p class="section-header__subtitle" lang="en">Syllabus &amp; Curriculum</p>
+              <div class="section-header__underline"></div>
+            </div>
+
+            <ul class="nav syllabus-filter-nav" id="syllabusTab" role="tablist">
+              <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#lower" type="button" role="tab">নিম্ন মাধ্যমিক (ষষ্ঠ–অষ্টম)</button></li>
+              <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#secondary" type="button" role="tab">মাধ্যমিক (নবম–দশম)</button></li>
+              <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#higher" type="button" role="tab">উচ্চ মাধ্যমিক (একাদশ–দ্বাদশ)</button></li>
+            </ul>
+
+            <div class="tab-content">
+              <div class="tab-pane fade show active syllabus-pane" id="lower" role="tabpanel" tabindex="0">
+                <div class="row g-4">
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-book syllabus-card__icon"></i><h3 class="syllabus-card__title">বাংলা</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. গদ্য</li><li>২. পদ্য</li><li>৩. ব্যাকরণ</li><li>৪. রচনা</li><li>৫. পত্রলেখন</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-translate syllabus-card__icon"></i><h3 class="syllabus-card__title">ইংরেজি</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. Grammar</li><li>২. Reading</li><li>৩. Writing</li><li>৪. Listening</li><li>৫. Literature</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-calculator syllabus-card__icon"></i><h3 class="syllabus-card__title">গণিত</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. সংখ্যা</li><li>২. বীজগণিত</li><li>৩. জ্যামিতি</li><li>৪. পরিমাপ</li><li>৫. পরিসংখ্যান</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-eyedropper syllabus-card__icon"></i><h3 class="syllabus-card__title">বিজ্ঞান</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. পদার্থ</li><li>২. রসায়ন</li><li>৩. জীববিজ্ঞান</li><li>৪. পরিবেশ</li><li>৫. স্বাস্থ্য</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-globe syllabus-card__icon"></i><h3 class="syllabus-card__title">বাংলাদেশ ও বিশ্বপরিচয়</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. ইতিহাস</li><li>২. ভূগোল</li><li>৩. নাগরিকতা</li><li>৪. অর্থনীতি</li><li>৫. সমাজ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-heart syllabus-card__icon"></i><h3 class="syllabus-card__title">ধর্ম ও নৈতিক শিক্ষা</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. আকিদা</li><li>২. ইবাদত</li><li>৩. আখলাক</li><li>৪. মুআমালাত</li><li>৫. ইতিহাস</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-laptop syllabus-card__icon"></i><h3 class="syllabus-card__title">তথ্য ও যোগাযোগ প্রযুক্তি</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. কম্পিউটার</li><li>২. ইন্টারনেট</li><li>৩. MS Office</li><li>৪. প্রোগ্রামিং</li><li>৫. নিরাপত্তা</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-person-walking syllabus-card__icon"></i><h3 class="syllabus-card__title">শারীরিক শিক্ষা</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. শরীরচর্চা</li><li>২. খেলাধুলা</li><li>৩. স্বাস্থ্যবিধি</li><li>৪. প্রাথমিক চিকিৎসা</li><li>৫. পুষ্টি</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <article class="syllabus-card animate-fade-up"><i class="bi bi-palette syllabus-card__icon"></i><h3 class="syllabus-card__title">চারু ও কারুকলা</h3><span class="syllabus-card__range">ষষ্ঠ–অষ্টম</span><ul class="syllabus-card__chapters"><li>১. চিত্রকলা</li><li>২. মৃৎশিল্প</li><li>৩. কাগজশিল্প</li><li>৪. বুননশিল্প</li><li>৫. নকশা</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade syllabus-pane" id="secondary" role="tabpanel" tabindex="0">
+                <div class="row g-4">
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-book syllabus-card__icon"></i><h3 class="syllabus-card__title">বাংলা</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. গদ্য</li><li>২. পদ্য</li><li>৩. ব্যাকরণ</li><li>৪. রচনা</li><li>৫. অনুধাবন</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-translate syllabus-card__icon"></i><h3 class="syllabus-card__title">ইংরেজি</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. Grammar</li><li>২. Reading</li><li>৩. Writing</li><li>৪. Literature</li><li>৫. Composition</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-calculator syllabus-card__icon"></i><h3 class="syllabus-card__title">গণিত (উচ্চতর)</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. বীজগণিত</li><li>২. জ্যামিতি</li><li>৩. ত্রিকোণমিতি</li><li>৪. পরিমাপ</li><li>৫. পরিসংখ্যান</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-lightning-charge syllabus-card__icon"></i><h3 class="syllabus-card__title">পদার্থবিজ্ঞান</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. বল ও গতি</li><li>২. কাজ ও শক্তি</li><li>৩. বিদ্যুৎ</li><li>৪. আলো</li><li>৫. তাপ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-droplet syllabus-card__icon"></i><h3 class="syllabus-card__title">রসায়ন</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. পদার্থের গঠন</li><li>২. মৌল ও যৌগ</li><li>৩. অম্ল-ক্ষার</li><li>৪. বিক্রিয়া</li><li>৫. প্রয়োগ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-tree syllabus-card__icon"></i><h3 class="syllabus-card__title">জীববিজ্ঞান</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. কোষ</li><li>২. টিস্যু</li><li>৩. উদ্ভিদ</li><li>৪. প্রাণী</li><li>৫. পরিবেশ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-laptop syllabus-card__icon"></i><h3 class="syllabus-card__title">তথ্য ও যোগাযোগ প্রযুক্তি</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. কম্পিউটার সিস্টেম</li><li>২. নেটওয়ার্ক</li><li>৩. MS Office</li><li>৪. প্রোগ্রামিং</li><li>৫. সাইবার নিরাপত্তা</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-heart syllabus-card__icon"></i><h3 class="syllabus-card__title">ধর্ম</h3><span class="syllabus-card__range">নবম–দশম</span><ul class="syllabus-card__chapters"><li>১. আকিদা</li><li>২. ইবাদত</li><li>৩. আখলাক</li><li>৪. ইতিহাস</li><li>৫. আদর্শ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade syllabus-pane" id="higher" role="tabpanel" tabindex="0">
+                <div class="row g-4">
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-book syllabus-card__icon"></i><h3 class="syllabus-card__title">বাংলা প্রথম পত্র</h3><span class="syllabus-card__range">একাদশ–দ্বাদশ</span><ul class="syllabus-card__chapters"><li>১. গদ্য</li><li>২. পদ্য</li><li>৩. অনুধাবন</li><li>৪. সাহিত্যিক প্রবন্ধ</li><li>৫. রচনা</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-translate syllabus-card__icon"></i><h3 class="syllabus-card__title">English First Paper</h3><span class="syllabus-card__range">HSC</span><ul class="syllabus-card__chapters"><li>1. Reading</li><li>2. Writing</li><li>3. Vocabulary</li><li>4. Grammar</li><li>5. Composition</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>Syllabus PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-calculator syllabus-card__icon"></i><h3 class="syllabus-card__title">উচ্চতর গণিত</h3><span class="syllabus-card__range">HSC</span><ul class="syllabus-card__chapters"><li>১. বীজগণিত</li><li>২. ক্যালকুলাস</li><li>৩. জ্যামিতি</li><li>৪. পরিসংখ্যান</li><li>৫. ত্রিকোণমিতি</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-lightning-charge syllabus-card__icon"></i><h3 class="syllabus-card__title">পদার্থবিজ্ঞান</h3><span class="syllabus-card__range">HSC Science</span><ul class="syllabus-card__chapters"><li>১. মেকানিক্স</li><li>২. তরঙ্গ</li><li>৩. বিদ্যুৎ</li><li>৪. আধুনিক পদার্থবিদ্যা</li><li>৫. তাপগতিবিদ্যা</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-droplet syllabus-card__icon"></i><h3 class="syllabus-card__title">রসায়ন</h3><span class="syllabus-card__range">HSC Science</span><ul class="syllabus-card__chapters"><li>১. মৌলিক ধারণা</li><li>২. জৈব রসায়ন</li><li>৩. অজৈব রসায়ন</li><li>৪. পরিমাণগত রসায়ন</li><li>৫. বিশ্লেষণ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                  <div class="col-lg-4 col-sm-6"><article class="syllabus-card animate-fade-up"><i class="bi bi-tree syllabus-card__icon"></i><h3 class="syllabus-card__title">জীববিজ্ঞান</h3><span class="syllabus-card__range">HSC Science</span><ul class="syllabus-card__chapters"><li>১. জীবনের বৈশিষ্ট্য</li><li>২. কোষ</li><li>৩. বংশগতি</li><li>৪. শারীরবিদ্যা</li><li>৫. পরিবেশ</li></ul><a class="syllabus-card__link" href="downloads.html"><i class="bi bi-file-earmark-pdf"></i>সিলেবাস PDF</a></article></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="exam" role="tabpanel" aria-labelledby="exam-tab" tabindex="0">
+            <div class="section-header animate-fade-up">
+              <h2 class="section-header__title">পরীক্ষার তথ্য</h2>
+              <p class="section-header__subtitle" lang="en">Examination Information</p>
+              <div class="section-header__underline"></div>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-lg-7">
+                <div class="accordion" id="examAccordion">
+                  <div class="accordion-item animate-fade-up">
+                    <h2 class="accordion-header" id="halfYearlyHeading">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#halfYearly" aria-expanded="true" aria-controls="halfYearly">
+                        <i class="bi bi-pencil-square me-2"></i>অর্ধবার্ষিক পরীক্ষা ২০২৫
+                      </button>
+                    </h2>
+                    <div id="halfYearly" class="accordion-collapse collapse show" aria-labelledby="halfYearlyHeading" data-bs-parent="#examAccordion">
+                      <div class="accordion-body">
+                        <div class="table-responsive">
+                          <table class="table exam-data-table">
+                            <thead>
+                              <tr><th>তারিখ</th><th>শ্রেণি</th><th>বিষয়</th><th>সময়</th><th>মোট নম্বর</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>১০ মে</td><td>৬ষ্ঠ</td><td>বাংলা</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>১১ মে</td><td>৭ম</td><td>ইংরেজি</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>১২ মে</td><td>৮ম</td><td>গণিত</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>১৩ মে</td><td>৯ম</td><td>পদার্থবিজ্ঞান</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>১৪ মে</td><td>১০ম</td><td>রসায়ন</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item animate-fade-up">
+                    <h2 class="accordion-header" id="annualHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#annual" aria-expanded="false" aria-controls="annual">
+                        <i class="bi bi-journal-check me-2"></i>বার্ষিক পরীক্ষা ২০২৫
+                      </button>
+                    </h2>
+                    <div id="annual" class="accordion-collapse collapse" aria-labelledby="annualHeading" data-bs-parent="#examAccordion">
+                      <div class="accordion-body">
+                        <div class="table-responsive">
+                          <table class="table exam-data-table">
+                            <thead>
+                              <tr><th>তারিখ</th><th>শ্রেণি</th><th>বিষয়</th><th>সময়</th><th>মোট নম্বর</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>০৫ নভেম্বর</td><td>৬ষ্ঠ</td><td>বাংলা</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>০৬ নভেম্বর</td><td>৭ম</td><td>ইংরেজি</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>০৭ নভেম্বর</td><td>৮ম</td><td>গণিত</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>০৮ নভেম্বর</td><td>৯ম</td><td>উচ্চতর গণিত</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>০৯ নভেম্বর</td><td>১০ম</td><td>পদার্থবিজ্ঞান</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                              <tr><td>১০ নভেম্বর</td><td>১০ম</td><td>জীববিজ্ঞান</td><td>সকাল ১০টা</td><td>১০০</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item animate-fade-up">
+                    <h2 class="accordion-header" id="publicHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#public" aria-expanded="false" aria-controls="public">
+                        <i class="bi bi-file-earmark-text me-2"></i>JSC/JDC পরীক্ষা
+                      </button>
+                    </h2>
+                    <div id="public" class="accordion-collapse collapse" aria-labelledby="publicHeading" data-bs-parent="#examAccordion">
+                      <div class="accordion-body">
+                        <div class="row g-3">
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-calendar-event"></i></div><h3 class="info-highlight-card__title">রেজিস্ট্রেশন শেষ</h3><p class="info-highlight-card__body">৩০ জুন ২০২৫</p></div></div>
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-calendar3"></i></div><h3 class="info-highlight-card__title">পরীক্ষা শুরু</h3><p class="info-highlight-card__body">০১ নভেম্বর ২০২৫</p></div></div>
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-geo-alt"></i></div><h3 class="info-highlight-card__title">কেন্দ্র তথ্য</h3><p class="info-highlight-card__body">মিরপুর শিক্ষা বোর্ড কেন্দ্র</p></div></div>
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-cash-coin"></i></div><h3 class="info-highlight-card__title">ফি</h3><p class="info-highlight-card__body">বোর্ড নির্ধারিত ফি প্রযোজ্য</p></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item animate-fade-up">
+                    <h2 class="accordion-header" id="sscHeading">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ssc" aria-expanded="false" aria-controls="ssc">
+                        <i class="bi bi-award me-2"></i>SSC পরীক্ষা
+                      </button>
+                    </h2>
+                    <div id="ssc" class="accordion-collapse collapse" aria-labelledby="sscHeading" data-bs-parent="#examAccordion">
+                      <div class="accordion-body">
+                        <div class="row g-3">
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-calendar-event"></i></div><h3 class="info-highlight-card__title">রেজিস্ট্রেশন শেষ</h3><p class="info-highlight-card__body">৩০ জুন ২০২৫</p></div></div>
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-calendar3"></i></div><h3 class="info-highlight-card__title">পরীক্ষা শুরু</h3><p class="info-highlight-card__body">০১ ফেব্রুয়ারি ২০২৬</p></div></div>
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-geo-alt"></i></div><h3 class="info-highlight-card__title">কেন্দ্র তথ্য</h3><p class="info-highlight-card__body">মিরপুর শিক্ষা বোর্ড কেন্দ্র</p></div></div>
+                          <div class="col-md-6"><div class="info-highlight-card"><div class="info-highlight-card__icon"><i class="bi bi-cash-coin"></i></div><h3 class="info-highlight-card__title">ফি</h3><p class="info-highlight-card__body">বোর্ড নির্ধারিত ফি প্রযোজ্য</p></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="grading-card animate-fade-up">
+                  <h3 class="grading-card__title"><i class="bi bi-bar-chart-fill"></i>গ্রেডিং সিস্টেম</h3>
+                  <div class="table-responsive">
+                    <table class="table grading-table">
+                      <thead>
+                        <tr><th>নম্বর</th><th>গ্রেড</th><th>গ্রেড পয়েন্ট</th></tr>
+                      </thead>
+                      <tbody>
+                        <tr class="grading-table__row--a-plus"><td>৮০–১০০</td><td><span class="grading-pill grading-pill--success">A+</span></td><td>5.00</td></tr>
+                        <tr class="grading-table__row--a"><td>৭০–৭৯</td><td><span class="grading-pill grading-pill--primary">A</span></td><td>4.00</td></tr>
+                        <tr class="grading-table__row--a-minus"><td>৬০–৬৯</td><td><span class="grading-pill grading-pill--primary">A-</span></td><td>3.50</td></tr>
+                        <tr class="grading-table__row--b"><td>৫০–৫৯</td><td><span class="grading-pill grading-pill--warning">B</span></td><td>3.00</td></tr>
+                        <tr class="grading-table__row--c"><td>৪০–৪৯</td><td><span class="grading-pill grading-pill--warning">C</span></td><td>2.00</td></tr>
+                        <tr class="grading-table__row--d"><td>৩৩–৩৯</td><td><span class="grading-pill grading-pill--accent">D</span></td><td>1.00</td></tr>
+                        <tr class="grading-table__row--f"><td>০–৩২</td><td><span class="grading-pill grading-pill--danger">F</span></td><td>0.00</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="exam-rules-card animate-fade-up">
+                  <h3 class="grading-card__title"><i class="bi bi-shield-check"></i>পরীক্ষার নিয়মাবলী</h3>
+                  <ol class="exam-rule-list">
+                    <li>পরীক্ষার ৩০ মিনিট আগে কেন্দ্রে উপস্থিত হতে হবে।</li>
+                    <li>প্রবেশপত্র ছাড়া পরীক্ষায় অংশগ্রহণ করা যাবে না।</li>
+                    <li>পরীক্ষা কক্ষে মোবাইল ফোন সম্পূর্ণ নিষিদ্ধ।</li>
+                    <li>নকল বা অসদুপায় অবলম্বনে বহিষ্কার করা হবে।</li>
+                    <li>পরীক্ষার্থীক নিজস্ব কলম ও প্রয়োজনীয় সামগ্রী আনতে হবে।</li>
+                    <li>উত্তরপত্রের বাইরে কোনো লেখা গ্রহণযোগ্য নয়।</li>
+                    <li>পরীক্ষা শেষ না হওয়া পর্যন্ত কক্ষ ত্যাগ নিষিদ্ধ।</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="results" role="tabpanel" aria-labelledby="results-tab" tabindex="0">
+            <div class="section-header animate-fade-up">
+              <h2 class="section-header__title">পরীক্ষার ফলাফল</h2>
+              <p class="section-header__subtitle" lang="en">Examination Results</p>
+              <div class="section-header__underline"></div>
+            </div>
+
+            <div class="result-filter-card animate-fade-up">
+              <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                  <label class="form-label bn-text" for="resultType">পরীক্ষার ধরন</label>
+                  <select id="resultType" class="form-select">
+                    <option>অর্ধবার্ষিক</option>
+                    <option>বার্ষিক</option>
+                    <option>JSC</option>
+                    <option>SSC</option>
+                    <option>HSC</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label bn-text" for="resultYear">শিক্ষাবর্ষ</label>
+                  <select id="resultYear" class="form-select">
+                    <option>২০২৫</option>
+                    <option>২০২৪</option>
+                    <option>২০২৩</option>
+                    <option>২০২২</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn-download w-100 justify-content-center" type="button"><i class="bi bi-search"></i>ফলাফল দেখুন</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+              <div class="col-lg-3 col-sm-6">
+                <article class="result-stat-card animate-fade-up">
+                  <div class="result-stat-card__icon"><i class="bi bi-people-fill"></i></div>
+                  <span class="result-stat-card__number">450</span>
+                  <div class="result-stat-card__label">মোট পরীক্ষার্থী</div>
+                </article>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <article class="result-stat-card result-stat-card--success animate-fade-up">
+                  <div class="result-stat-card__icon"><i class="bi bi-check-circle-fill"></i></div>
+                  <span class="result-stat-card__number">98%</span>
+                  <div class="result-stat-card__label">পাসের হার</div>
+                </article>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <article class="result-stat-card result-stat-card--warning animate-fade-up">
+                  <div class="result-stat-card__icon"><i class="bi bi-star-fill"></i></div>
+                  <span class="result-stat-card__number">87</span>
+                  <div class="result-stat-card__label">A+ প্রাপ্ত</div>
+                </article>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <article class="result-stat-card result-stat-card--accent animate-fade-up">
+                  <div class="result-stat-card__icon"><i class="bi bi-trophy-fill"></i></div>
+                  <span class="result-stat-card__number">62</span>
+                  <div class="result-stat-card__label">জিপিএ ৫</div>
+                </article>
+              </div>
+            </div>
+
+            <div class="results-table-wrap animate-fade-up">
+              <table class="table results-table">
+                <caption class="visually-hidden">পরীক্ষার ফলাফল</caption>
+                <thead>
+                  <tr>
+                    <th>শ্রেণি</th>
+                    <th>মোট শিক্ষার্থী</th>
+                    <th>পরীক্ষার্থীর</th>
+                    <th>পাশ</th>
+                    <th>ফেল</th>
+                    <th>পাসের হার</th>
+                    <th>A+</th>
+                    <th>GPA 5</th>
+                    <th>ডাউনলোড</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>৬ষ্ঠ</td><td>120</td><td>118</td><td>115</td><td>3</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="৬ষ্ঠ শ্রেণির পাসের হার" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="97"></div>
+                      </div>
+                      <span class="d-block mt-2">97%</span>
+                    </td>
+                    <td>24</td><td>18</td><td><a class="results-table__download" href="downloads.html" aria-label="৬ষ্ঠ শ্রেণির ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>৭ম</td><td>115</td><td>114</td><td>112</td><td>2</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="৭ম শ্রেণির পাসের হার" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="98"></div>
+                      </div>
+                      <span class="d-block mt-2">98%</span>
+                    </td>
+                    <td>26</td><td>20</td><td><a class="results-table__download" href="downloads.html" aria-label="৭ম শ্রেণির ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>৮ম</td><td>110</td><td>109</td><td>107</td><td>2</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="৮ম শ্রেণির পাসের হার" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="98"></div>
+                      </div>
+                      <span class="d-block mt-2">98%</span>
+                    </td>
+                    <td>22</td><td>16</td><td><a class="results-table__download" href="downloads.html" aria-label="৮ম শ্রেণির ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>৯ম</td><td>105</td><td>104</td><td>101</td><td>3</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="৯ম শ্রেণির পাসের হার" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="97"></div>
+                      </div>
+                      <span class="d-block mt-2">97%</span>
+                    </td>
+                    <td>20</td><td>15</td><td><a class="results-table__download" href="downloads.html" aria-label="৯ম শ্রেণির ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>১০ম</td><td>98</td><td>98</td><td>96</td><td>2</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="১০ম শ্রেণির পাসের হার" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="98"></div>
+                      </div>
+                      <span class="d-block mt-2">98%</span>
+                    </td>
+                    <td>18</td><td>14</td><td><a class="results-table__download" href="downloads.html" aria-label="১০ম শ্রেণির ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>JSC</td><td>90</td><td>90</td><td>89</td><td>1</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="JSC পরীক্ষার পাসের হার" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="99"></div>
+                      </div>
+                      <span class="d-block mt-2">99%</span>
+                    </td>
+                    <td>30</td><td>24</td><td><a class="results-table__download" href="downloads.html" aria-label="JSC ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>SSC</td><td>80</td><td>80</td><td>78</td><td>2</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="SSC পরীক্ষার পাসের হার" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="98"></div>
+                      </div>
+                      <span class="d-block mt-2">98%</span>
+                    </td>
+                    <td>28</td><td>20</td><td><a class="results-table__download" href="downloads.html" aria-label="SSC ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>HSC</td><td>42</td><td>42</td><td>41</td><td>1</td>
+                    <td>
+                      <div class="progress pass-progress" role="progressbar" aria-label="HSC পরীক্ষার পাসের হার" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" data-width="98"></div>
+                      </div>
+                      <span class="d-block mt-2">98%</span>
+                    </td>
+                    <td>16</td><td>12</td><td><a class="results-table__download" href="downloads.html" aria-label="HSC ফলাফল ডাউনলোড"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="promotion" role="tabpanel" aria-labelledby="promotion-tab" tabindex="0">
+            <div class="section-header animate-fade-up">
+              <h2 class="section-header__title">প্রমোশন ও পদোন্নতি বিধি</h2>
+              <p class="section-header__subtitle" lang="en">Promotion Rules</p>
+              <div class="section-header__underline"></div>
+            </div>
+
+            <div class="promotion-wrap">
+              <article class="promotion-rule-card animate-fade-up">
+                <h3 class="promotion-rule-card__title"><i class="bi bi-check2-circle promotion-rule-card__icon"></i>পাসের ন্যূনতম নম্বর</h3>
+                <div class="table-responsive">
+                  <table class="table promotion-rule-table">
+                    <thead>
+                      <tr><th>বিষয়</th><th>লিখিত</th><th>ব্যবহারিক</th><th>মোট নম্বর</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>বাংলা</td><td>33/100</td><td>20/50</td><td>পাস</td></tr>
+                      <tr><td>ইংরেজি</td><td>33/100</td><td>-</td><td>পাস</td></tr>
+                      <tr><td>গণিত</td><td>33/100</td><td>-</td><td>পাস</td></tr>
+                      <tr><td>বিজ্ঞান</td><td>33/100</td><td>20/50</td><td>পাস</td></tr>
+                      <tr><td>সমাজ</td><td>33/100</td><td>-</td><td>পাস</td></tr>
+                      <tr><td>ধর্ম</td><td>33/100</td><td>-</td><td>পাস</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="promotion-rule-card promotion-rule-card--success animate-fade-up">
+                <h3 class="promotion-rule-card__title"><i class="bi bi-list-check promotion-rule-card__icon"></i>শ্রেণি উত্তীর্ণের শর্তাবলী</h3>
+                <ol class="promotion-rule-card__list">
+                  <li>সকল বিষয়ের ন্যূনতম পাস নম্বর অর্জন করতে হবে।</li>
+                  <li>মোট নম্বরের কমপক্ষে ৩৩% প্রাপ্ত হতে হবে।</li>
+                  <li>৭৫% উপস্থিতি বাধ্যতামূলক।</li>
+                  <li>দুইটির বেশি বিষয়ে ফেল করলে পরবর্তী শ্রেণিতে উত্তীর্ণ হওয়া যাবে না।</li>
+                  <li>ব্যবহারিক পরীক্ষায় উপস্থিত থাকা বাধ্যতামূলক।</li>
+                </ol>
+              </article>
+
+              <article class="promotion-rule-card promotion-rule-card--warning animate-fade-up">
+                <h3 class="promotion-rule-card__title"><i class="bi bi-arrow-repeat promotion-rule-card__icon"></i>বিশেষ পরীক্ষা ও পুনর্মূল্যায়ন</h3>
+                <p class="promotion-rule-card__body">কোনো একটি বিষয়ে ফেল হলে বিশেষ পরীক্ষার সুযোগ দেওয়া হয়। ফলাফল প্রকাশের ৭ দিনের মধ্যে পুনর্মূল্যায়নের আবেদন করা যায়। প্রতিটি বিষয়ের জন্য নির্ধারিত ফি ৫০ টাকা। পুনর্মূল্যায়নের ফল চূড়ান্ত বলে গণ্য হবে।</p>
+              </article>
+
+              <article class="promotion-rule-card promotion-rule-card--accent animate-fade-up">
+                <h3 class="promotion-rule-card__title"><i class="bi bi-trophy promotion-rule-card__icon"></i>সম্মানী রোল ও বৃত্তি</h3>
+                <ol class="promotion-rule-card__list">
+                  <li>মেধাতালিকায় স্থান পেতে সকল বিষয়ে A পেতে হবে।</li>
+                  <li>বৃত্তির জন্য GPA 5 এবং পৃথক আবেদন প্রয়োজন।</li>
+                  <li>মেধাবৃত্তি প্রতি শ্রেণিতে প্রথম ৩ জনকে প্রদান করা হয়।</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top-strip">
+      <div class="container">
+        <div class="footer-top-strip__content">
+          <p class="footer-top-strip__title"><span aria-hidden="true">🎓</span> ২০২৫ সালের ভর্তি কার্যক্রম চলছে</p>
+          <a class="btn-school-accent bn-text" href="admission.html">ভর্তির জন্য আবেদন করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-logo-block">
+              <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+              <div>
+                <h3 class="footer-logo-block__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</h3>
+                <span class="footer-logo-block__subtitle">Adarsha High School &amp; College</span>
+              </div>
+            </div>
+            <div class="footer-rule"></div>
+            <p class="footer-description">ঢাকার একটি সুপরিচিত শিক্ষা প্রতিষ্ঠান হিসেবে আমরা মানসম্মত শিক্ষা, নৈতিকতা ও প্রযুক্তিনির্ভর শেখার পরিবেশ নিশ্চিত করি।</p>
+            <span class="footer-eiin">EIIN: 123456</span>
+            <div class="footer-social">
+              <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://x.com" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h3 class="footer-heading">দ্রুত লিঙ্ক</h3>
+            <ul class="footer-links">
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i> হোম</a></li>
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> আমাদের সম্পর্কে</a></li>
+              <li><a href="head-teacher.html"><i class="bi bi-chevron-right"></i> প্রধান শিক্ষকের বাণী</a></li>
+              <li><a href="teachers.html"><i class="bi bi-chevron-right"></i> শিক্ষক-কর্মচারী</a></li>
+              <li><a href="committee.html"><i class="bi bi-chevron-right"></i> পরিচালনা কমিটি</a></li>
+              <li><a href="notices.html"><i class="bi bi-chevron-right"></i> নোটিশ বোর্ড</a></li>
+              <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> গ্যালারি</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> যোগাযোগ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h3 class="footer-heading">একাডেমিক</h3>
+            <ul class="footer-links">
+              <li><a href="academic.html#calendar"><i class="bi bi-chevron-right"></i> একাডেমিক ক্যালেন্ডার</a></li>
+              <li><a href="academic.html#routine"><i class="bi bi-chevron-right"></i> শ্রেণি রুটিন</a></li>
+              <li><a href="academic.html#syllabus"><i class="bi bi-chevron-right"></i> সিলেবাস</a></li>
+              <li><a href="academic.html#exam"><i class="bi bi-chevron-right"></i> পরীক্ষার তথ্য</a></li>
+              <li><a href="academic.html#results"><i class="bi bi-chevron-right"></i> ফলাফল</a></li>
+              <li><a href="academic.html#promotion"><i class="bi bi-chevron-right"></i> প্রমোশন বিধি</a></li>
+              <li><a href="admission.html"><i class="bi bi-chevron-right"></i> ভর্তি তথ্য</a></li>
+              <li><a href="downloads.html"><i class="bi bi-chevron-right"></i> ডাউনলোড সেন্টার</a></li>
+              <li><a href="grs.html"><i class="bi bi-chevron-right"></i> অভিযোগ ও GRS</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h3 class="footer-heading">যোগাযোগ করুন</h3>
+            <ul class="footer-contact-list">
+              <li><i class="bi bi-geo-alt-fill"></i><span>ঢাকা, বাংলাদেশ<br>আদর্শ রোড, মিরপুর</span></li>
+              <li><i class="bi bi-telephone-fill"></i><span>+880 2-XXXXXXXX<br>+880 1X-XXXXXXXX</span></li>
+              <li><i class="bi bi-envelope-fill"></i><span>info@adarshaschool.edu.bd</span></li>
+              <li><i class="bi bi-clock-fill"></i><span>শনি–বৃহস্পতিবার: সকাল ৮টা – বিকেল ৪টা</span></li>
+              <li><i class="bi bi-globe"></i><span>www.adarshaschool.edu.bd</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__content">
+          <div class="footer-bottom__copy">© ২০২৫ আদর্শ উচ্চ বিদ্যালয় ও কলেজ। সর্বস্বত্ব সংরক্ষিত।</div>
+          <div class="footer-bottom__links">
+            <a href="privacy.html">গোপনীয়তা নীতি</a>
+            <a href="sitemap.html">সাইটম্যাপ</a>
+            <a href="grs.html">অভিযোগ ও GRS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const academicTabMap = new Map([
+        ['#calendar', 'calendar-tab'],
+        ['#routine', 'routine-tab'],
+        ['#syllabus', 'syllabus-tab'],
+        ['#exam', 'exam-tab'],
+        ['#results', 'results-tab'],
+        ['#promotion', 'promotion-tab'],
+      ]);
+
+      const updateAcademicMenuState = (hash) => {
+        document.querySelectorAll('a[href^="academic.html#"]').forEach((link) => {
+          const linkHash = new URL(link.href, window.location.href).hash || '#calendar';
+          const isActive = linkHash === hash;
+
+          link.classList.toggle('active', isActive);
+          if (isActive) {
+            link.setAttribute('aria-current', 'page');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+
+          const dropdownToggle = link.closest('.dropdown')?.querySelector('.dropdown-toggle');
+          if (dropdownToggle) {
+            dropdownToggle.classList.add('active');
+            dropdownToggle.setAttribute('aria-current', 'page');
+          }
+        });
+      };
+
+      const showAcademicTab = (hash, updateUrl = false) => {
+        const targetHash = academicTabMap.has(hash) ? hash : '#calendar';
+        const targetId = academicTabMap.get(targetHash);
+        const tabTrigger = targetId ? document.getElementById(targetId) : null;
+
+        if (!tabTrigger) {
+          return;
+        }
+
+        bootstrap.Tab.getOrCreateInstance(tabTrigger).show();
+        updateAcademicMenuState(targetHash);
+
+        if (updateUrl) {
+          history.pushState(null, '', targetHash);
+        }
+      };
+
+      showAcademicTab(window.location.hash || '#calendar');
+
+      document.querySelectorAll('a[href^="academic.html#"]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          if (window.location.pathname.endsWith('academic.html')) {
+            event.preventDefault();
+            const nextHash = new URL(link.href, window.location.href).hash || '#calendar';
+            showAcademicTab(nextHash, true);
+          }
+        });
+      });
+
+      window.addEventListener('hashchange', () => {
+        showAcademicTab(window.location.hash || '#calendar');
+      });
+
+      window.addEventListener('popstate', () => {
+        showAcademicTab(window.location.hash || '#calendar');
+      });
+
+      const routineButtons = document.querySelectorAll('.routine-btn');
+      const routineTables = document.querySelectorAll('.routine-table-wrap[id^="routine-"]');
+
+      routineButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const targetClass = button.dataset.class;
+
+          routineButtons.forEach((item) => item.classList.remove('active'));
+          routineTables.forEach((table) => table.classList.add('d-none'));
+
+          button.classList.add('active');
+          document.getElementById(`routine-${targetClass}`)?.classList.remove('d-none');
+        });
+      });
+
+      document.querySelectorAll('.progress-bar[data-width]').forEach((bar) => {
+        bar.style.width = `${bar.dataset.width}%`;
+      });
+    });
+  </script>
+</body>
+</html>

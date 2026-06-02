@@ -58,6 +58,42 @@
   .timeline-card {
     width: 100%;
   }
+
+  .about-timeline-wrapper::before {
+    left: 20px;
+    transform: none;
+  }
+
+  .about-timeline-item {
+    justify-content: flex-start;
+    padding-left: 52px;
+  }
+
+  .about-timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+  .about-timeline-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .institute-table td:first-child {
+    width: 42%;
+  }
+
+  .filter-bar {
+    align-items: stretch;
+  }
+
+  .filter-tabs {
+    width: 100%;
+  }
+
+  .filter-tab {
+    flex: 1 1 auto;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -110,6 +146,130 @@
     border-right: 0;
     border-bottom: 1px solid var(--white-15);
   }
+
+  .page-hero-banner {
+    height: 180px;
+  }
+
+  .page-hero {
+    height: 180px;
+  }
+
+  .history-badge {
+    right: 12px;
+    bottom: -12px;
+    padding: 12px 16px;
+  }
+
+  .about-history__visual {
+    min-height: 300px;
+  }
+
+  .about-history__visual-wrap {
+    margin-bottom: 32px;
+  }
+
+  .mission-card {
+    padding: 28px 22px;
+  }
+
+  .glance-stat {
+    border-right: 0;
+  }
+
+  .about-glance .row > [class*="col"]:nth-child(4n) .glance-stat {
+    border-right: 0;
+  }
+
+  .value-card {
+    flex-direction: column;
+  }
+
+  .about-timeline-item {
+    padding-left: 52px;
+  }
+
+  .about-timeline-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-info-table {
+    min-width: 760px;
+  }
+
+  .about-cta-strip__actions .btn-school-primary,
+  .about-cta-strip__actions .btn-school-outline {
+    width: 100%;
+  }
+
+  .institute-table {
+    min-width: 980px;
+  }
+
+  .institute-section-header__title {
+    font-size: 22px;
+  }
+
+  .stat-strip .stat-card {
+    padding: 24px 18px;
+  }
+
+  .teacher-card__initials {
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+  }
+
+  .committee-info-card,
+  .term-info-card,
+  .responsibility-card {
+    padding: 24px 20px;
+  }
+
+  .committee-card--featured {
+    padding: 28px 20px 22px;
+  }
+
+  .committee-card {
+    padding: 22px 16px 18px;
+  }
+
+  .committee-card__photo--featured {
+    width: 88px;
+    height: 88px;
+  }
+
+  .committee-card__photo--featured i {
+    font-size: 40px;
+  }
+
+  .committee-card__photo--compact {
+    width: 72px;
+    height: 72px;
+  }
+
+  .committee-card__photo--compact i {
+    font-size: 30px;
+  }
+
+  .committee-card__name {
+    font-size: 15px;
+  }
+
+  .committee-card__name--compact {
+    font-size: 13.5px;
+  }
+
+  .term-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .term-row__value {
+    text-align: left;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -141,5 +301,60 @@
   .signature-row {
     align-items: center;
     text-align: center;
+  }
+
+  .about-timeline-wrapper::before {
+    left: 20px;
+  }
+
+  .about-timeline-dot {
+    left: 20px;
+  }
+
+  .about-recognition__grid > [class*="col"] {
+    width: 100%;
+  }
+
+  .institute-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .institute-section-header__title {
+    font-size: 20px;
+  }
+
+  .filter-bar {
+    padding: 16px;
+  }
+
+  .search-field {
+    flex-basis: 100%;
+  }
+
+  .filter-tab {
+    flex: 1 1 calc(50% - 8px);
+    text-align: center;
+  }
+
+  .committee-section--info,
+  .committee-section--members,
+  .committee-section--responsibilities {
+    padding: 48px 0;
+  }
+
+  .committee-info-card,
+  .term-info-card,
+  .responsibility-card {
+    padding: 22px 18px;
+  }
+
+  .committee-card--featured,
+  .committee-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .meeting-info-item {
+    padding: 12px 10px;
   }
 }
