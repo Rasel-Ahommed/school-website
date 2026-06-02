@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Science award illustration">
+  <rect width="1200" height="800" fill="#ecfccb"/>
+  <path d="M220 620h760l-120-360H340z" fill="#16a34a"/>
+  <circle cx="600" cy="240" r="120" fill="#ffffff"/>
+  <path d="M560 170h80v120h-80z" fill="#16a34a"/>
+  <path d="M520 260h160v46H520z" fill="#16a34a"/>
+  <text x="600" y="710" font-family="Arial, sans-serif" font-size="54" text-anchor="middle" fill="#14532d">Science Olympiad Winner</text>
+</svg>

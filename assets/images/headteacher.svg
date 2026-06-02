@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Head teacher portrait">
+  <rect width="600" height="600" fill="#e2e8f0"/>
+  <circle cx="300" cy="220" r="110" fill="#f8fafc"/>
+  <circle cx="300" cy="210" r="72" fill="#c8372d" opacity="0.18"/>
+  <path d="M180 520c30-110 90-160 120-160s90 50 120 160" fill="#1f5fa0"/>
+  <circle cx="300" cy="220" r="82" fill="#f3d2bf"/>
+  <path d="M226 205c12-56 40-86 74-86 36 0 67 28 76 86-19-22-48-34-77-34-29 0-54 12-73 34z" fill="#334155"/>
+  <text x="300" y="570" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#1e293b">Head Teacher</text>
+</svg>

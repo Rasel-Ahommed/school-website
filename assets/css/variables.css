@@ -1,0 +1,72 @@
+:root {
+  --hue: 214;
+  --sat: 72%;
+
+  --primary: hsl(var(--hue), var(--sat), 35%);
+  --primary-light: hsl(var(--hue), var(--sat), 92%);
+  --primary-dark: hsl(var(--hue), var(--sat), 22%);
+  --primary-hover: hsl(var(--hue), var(--sat), 28%);
+  --primary-subtle: hsl(var(--hue), var(--sat), 97%);
+  --primary-border: hsl(var(--hue), var(--sat), 80%);
+
+  --accent: #c8372d;
+  --accent-light: #fdecea;
+  --accent-dark: #9e1f17;
+
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --warning: #d97706;
+  --warning-light: #fef3c7;
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+
+  --bg-body: var(--white);
+  --bg-section: var(--gray-50);
+  --bg-card: var(--white);
+  --text-primary: var(--gray-800);
+  --text-secondary: var(--gray-600);
+  --text-muted: var(--gray-400);
+  --border-color: var(--gray-200);
+
+  --white-06: rgba(255, 255, 255, 0.06);
+  --white-10: rgba(255, 255, 255, 0.1);
+  --white-12: rgba(255, 255, 255, 0.12);
+  --white-15: rgba(255, 255, 255, 0.15);
+  --white-55: rgba(255, 255, 255, 0.55);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-75: rgba(255, 255, 255, 0.75);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-85: rgba(255, 255, 255, 0.85);
+  --black-04: rgba(0, 0, 0, 0.04);
+  --black-08: rgba(0, 0, 0, 0.08);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 3px var(--black-08), 0 1px 2px var(--black-04);
+  --shadow-md: 0 4px 12px var(--black-08), 0 2px 4px var(--black-04);
+  --shadow-lg: 0 10px 30px var(--black-10), 0 4px 8px var(--black-04);
+
+  --overlay-primary-15: hsla(var(--hue), var(--sat), 35%, 0.15);
+  --overlay-primary-dark-65: hsla(var(--hue), var(--sat), 22%, 0.65);
+  --overlay-footer-bottom: hsl(var(--hue), var(--sat), 14%);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --font-primary: "Public Sans", "Noto Sans Bengali", sans-serif;
+  --font-bengali: "Noto Sans Bengali", "Public Sans", sans-serif;
+
+  --transition: all 0.2s ease;
+}

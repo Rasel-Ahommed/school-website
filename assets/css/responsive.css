@@ -1,0 +1,145 @@
+@media (max-width: 1199.98px) {
+  .main-navbar .nav-link {
+    padding: 14px 0;
+  }
+
+  .main-navbar .nav-link.active::after {
+    right: auto;
+    bottom: 8px;
+    left: 0;
+    width: 36px;
+  }
+
+  .navbar-actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 16px;
+  }
+
+  .navbar-collapse {
+    padding: 16px 0 20px;
+  }
+
+  .main-navbar .navbar-nav {
+    border-top: 1px solid var(--gray-100);
+    margin-top: 12px;
+  }
+
+  .main-navbar .nav-item {
+    border-bottom: 1px solid var(--gray-100);
+  }
+}
+
+@media (max-width: 991.98px) {
+  #hero {
+    height: 100vh;
+    min-height: 520px;
+  }
+
+  .hero-content {
+    padding-top: 20px;
+  }
+
+  .timeline::before {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-item {
+    justify-content: flex-start;
+    padding-left: 48px;
+  }
+
+  .timeline-dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-overlay {
+    background: linear-gradient(
+      105deg,
+      hsla(var(--hue), var(--sat), 14%, 0.88) 0%,
+      hsla(var(--hue), var(--sat), 14%, 0.72) 45%,
+      hsla(var(--hue), var(--sat), 14%, 0.3) 100%
+    );
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-trust {
+    gap: 16px;
+  }
+
+  .hero-trust__value {
+    font-size: 18px;
+  }
+
+  .headteacher-quals {
+    justify-content: center;
+  }
+
+  .signature-row,
+  .footer-top-strip__content,
+  .footer-bottom__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-item--wide {
+    grid-column: span 2;
+  }
+
+  .stat-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--white-15);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-actions .btn-school-primary,
+  .hero-actions .btn-school-outline {
+    width: 100%;
+  }
+
+  .hero-trust {
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .hero-trust__divider {
+    display: none;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item,
+  .gallery-item--wide {
+    grid-column: auto;
+    height: 220px;
+  }
+
+  .footer-top-strip__content,
+  .signature-row {
+    align-items: center;
+    text-align: center;
+  }
+}

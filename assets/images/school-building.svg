@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="School building">
+  <rect width="1200" height="800" fill="#f1f5f9"/>
+  <rect y="560" width="1200" height="240" fill="#cbd5e1"/>
+  <rect x="180" y="180" width="840" height="420" rx="26" fill="#1f5fa0"/>
+  <rect x="250" y="250" width="700" height="280" rx="18" fill="#ffffff"/>
+  <rect x="520" y="360" width="160" height="240" fill="#c8372d"/>
+  <g fill="#dbeafe">
+    <rect x="290" y="290" width="110" height="90" rx="10"/>
+    <rect x="430" y="290" width="110" height="90" rx="10"/>
+    <rect x="660" y="290" width="110" height="90" rx="10"/>
+    <rect x="800" y="290" width="110" height="90" rx="10"/>
+    <rect x="290" y="410" width="110" height="90" rx="10"/>
+    <rect x="430" y="410" width="110" height="90" rx="10"/>
+    <rect x="660" y="410" width="110" height="90" rx="10"/>
+    <rect x="800" y="410" width="110" height="90" rx="10"/>
+  </g>
+  <text x="600" y="120" font-family="Arial, sans-serif" font-size="48" text-anchor="middle" fill="#1e293b">Adarsha High School &amp; College</text>
+</svg>
