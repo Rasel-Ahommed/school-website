@@ -9,8 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
     navbar.classList.toggle("scrolled", window.scrollY > 50);
   };
 
+  const updateStickyOffsetState = () => {
+    document.body.classList.toggle("is-away-from-top", window.scrollY > 80);
+  };
+
   updateNavbarState();
-  window.addEventListener("scroll", updateNavbarState);
+  updateStickyOffsetState();
+  window.addEventListener("scroll", () => {
+    updateNavbarState();
+    updateStickyOffsetState();
+  });
 
   const currentUrl = new URL(window.location.href);
   const currentPath = currentUrl.pathname.split("/").pop() || "index.html";
