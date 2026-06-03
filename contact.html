@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>যোগাযোগ | আদর্শ উচ্চ বিদ্যালয় ও কলেজ</title>
+  <meta name="description" content="আদর্শ উচ্চ বিদ্যালয় ও কলেজের সাথে যোগাযোগ করুন। ঠিকানা, ফোন, ইমেইল, অফিস সময় এবং যোগাযোগ ফর্ম এখানে পাবেন।">
+  <meta property="og:title" content="যোগাযোগ | আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    body.contact-page {
+      background: var(--white);
+    }
+
+    .contact-page .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, var(--white-06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .contact-page .page-hero::after {
+      top: auto;
+      bottom: -90px;
+      right: -40px;
+    }
+
+    .contact-page .page-hero__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .contact-page .page-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border: 1px solid var(--white-15);
+      border-radius: 50px;
+      background: var(--white-10);
+      color: var(--white);
+      font-size: 13px;
+    }
+
+    #contact-info {
+      padding: 70px 0;
+      background: var(--gray-50);
+    }
+
+    .contact-card {
+      height: 100%;
+      padding: 32px 24px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-border);
+    }
+
+    .contact-card__icon {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      border: 2px solid var(--primary-border);
+      border-radius: 50%;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-size: 28px;
+    }
+
+    .contact-card__icon--warning {
+      color: var(--warning);
+    }
+
+    .contact-card__label {
+      margin: 0 0 8px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-card__value {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .contact-card__value a {
+      color: inherit;
+    }
+
+    .contact-card__subvalue {
+      margin: 4px 0 0;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    #contact-form-map {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .contact-section-title {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .contact-section-subtitle {
+      margin: 4px 0 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .contact-accent-line {
+      width: 40px;
+      height: 3px;
+      margin-top: 8px;
+      border-radius: 50px;
+      background: var(--accent);
+    }
+
+    .contact-form-wrapper {
+      padding: 36px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-form-wrapper .form-label {
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .contact-form-wrapper .form-control,
+    .contact-form-wrapper .form-select {
+      border-color: var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--text-primary);
+    }
+
+    .contact-form-wrapper .form-control:focus,
+    .contact-form-wrapper .form-select:focus {
+      border-color: var(--primary-border);
+      box-shadow: 0 0 0 0.2rem var(--primary-light);
+    }
+
+    .contact-form-wrapper .invalid-feedback {
+      font-size: 12px;
+    }
+
+    .char-counter {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .contact-map-wrap {
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-map-wrap iframe {
+      display: block;
+      width: 100%;
+      min-height: 340px;
+      border: 0;
+    }
+
+    .contact-directions {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--primary-subtle);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-directions__title {
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-family: var(--font-bengali);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-directions__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-directions__list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--primary-border);
+    }
+
+    .contact-directions__list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-directions__icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    .contact-directions__item-title {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .contact-directions__item-detail {
+      margin: 2px 0 0;
+      color: var(--text-secondary);
+      font-size: 12px;
+    }
+
+    .contact-directions__link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 12px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    #office-hours {
+      padding: 70px 0;
+      background: var(--gray-50);
+    }
+
+    .dept-card {
+      height: 100%;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .dept-card:hover {
+      transform: translateY(-2px);
+      border-left-color: var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .dept-card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dept-card__title {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .dept-card__icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .dept-card__divider {
+      height: 1px;
+      margin: 12px 0;
+      background: var(--border-color);
+    }
+
+    .dept-card__line {
+      display: flex;
+      gap: 8px;
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .dept-card__line + .dept-card__line {
+      margin-top: 8px;
+    }
+
+    .dept-card__line i {
+      color: var(--primary);
+      margin-top: 2px;
+    }
+
+    .contact-toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      background: var(--primary-dark);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-toast.is-visible {
+      display: inline-flex;
+    }
+
+    .contact-toast__icon {
+      color: var(--success);
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body class="contact-page">
+  <header>
+    <div class="topbar d-none d-xl-flex">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="topbar__left">
+          <span><span aria-hidden="true">🇧🇩</span> গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</span>
+          <span>|</span>
+          <span>জাতীয় শিক্ষা সপ্তাহ ২০২৫</span>
+        </div>
+        <div class="topbar__right">
+          <span><i class="bi bi-telephone-fill" aria-hidden="true"></i> +880 2-XXXXXXXX</span>
+          <span><i class="bi bi-envelope-fill" aria-hidden="true"></i> info@adarshaschool.edu.bd</span>
+          <div class="topbar__social">
+            <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-navbar navbar navbar-expand-xl">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+          <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+          <span>
+            <span class="navbar-brand__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</span>
+            <span class="navbar-brand__subtitle">Adarsha High School &amp; College, Dhaka</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolNavbar" aria-controls="schoolNavbar" aria-expanded="false" aria-label="নেভিগেশন খুলুন">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="schoolNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">আমাদের বিদ্যালয়</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="about.html#history">ইতিহাস</a></li>
+                <li><a class="dropdown-item" href="about.html#mission">লক্ষ্য ও উদ্দেশ্য</a></li>
+                <li><a class="dropdown-item" href="institute-info.html">প্রতিষ্ঠান তথ্য</a></li>
+                <li><a class="dropdown-item" href="facilities.html">সুযোগ-সুবিধা</a></li>
+                <li><a class="dropdown-item" href="events.html">ইভেন্ট ও সংবাদ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">প্রশাসন</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="head-teacher.html">প্রধান শিক্ষকের বাণী</a></li>
+                <li><a class="dropdown-item" href="committee.html">পরিচালনা কমিটি</a></li>
+                <li><a class="dropdown-item" href="teachers.html">শিক্ষক-কর্মচারী</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">একাডেমিক</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="academic.html#calendar">একাডেমিক ক্যালেন্ডার</a></li>
+                <li><a class="dropdown-item" href="academic.html#routine">শ্রেণি রুটিন</a></li>
+                <li><a class="dropdown-item" href="academic.html#syllabus">সিলেবাস</a></li>
+                <li><a class="dropdown-item" href="academic.html#exam">পরীক্ষার তথ্য</a></li>
+                <li><a class="dropdown-item" href="results.html">ফলাফল</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="admission.html">ভর্তি</a></li>
+            <li class="nav-item"><a class="nav-link" href="notices.html">নোটিশ বোর্ড</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">ইভেন্ট ও সংবাদ</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html" aria-current="page">যোগাযোগ</a></li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a class="btn-school-accent" href="admission.html"><i class="bi bi-pencil-square me-1" aria-hidden="true"></i> ভর্তি আবেদন</a>
+            <button class="btn-navbar-icon" type="button" aria-label="অনুসন্ধান">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="page-hero" class="page-hero" aria-label="যোগাযোগ">
+      <div class="container page-hero__content">
+        <div class="row w-100 align-items-center g-3">
+          <div class="col-md-7">
+            <nav aria-label="breadcrumb" class="page-hero__breadcrumb">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">হোম</a></li>
+                <li class="breadcrumb-item active" aria-current="page">যোগাযোগ</li>
+              </ol>
+            </nav>
+            <h1 class="page-hero__title">যোগাযোগ করুন</h1>
+            <p class="page-hero__subtitle">Get In Touch</p>
+          </div>
+          <div class="col-md-5 d-none d-md-flex justify-content-md-end">
+            <div class="page-hero__badges">
+              <span class="page-hero__badge"><i class="bi bi-telephone-fill me-2" aria-hidden="true"></i> +880 2-XXXXXXXX</span>
+              <span class="page-hero__badge"><i class="bi bi-envelope-fill me-2" aria-hidden="true"></i> info@adarshaschool.edu.bd</span>
+              <span class="page-hero__badge"><i class="bi bi-clock-fill me-2" aria-hidden="true"></i> সোম–শুক্র, সকাল ৯টা–৫টা</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-info">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title">আমাদের সাথে যোগাযোগ করুন</h2>
+          <p class="section-header__subtitle" lang="en">Contact Information</p>
+          <div class="section-header__underline"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <article class="contact-card animate-fade-up">
+              <div class="contact-card__icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></div>
+              <p class="contact-card__label">ঠিকানা</p>
+              <p class="contact-card__value"><a href="#">আদর্শ রোড, মিরপুর-১০</a></p>
+              <p class="contact-card__subvalue">ঢাকা-১২১৬, বাংলাদেশ</p>
+            </article>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <article class="contact-card animate-fade-up">
+              <div class="contact-card__icon"><i class="bi bi-telephone-fill" aria-hidden="true"></i></div>
+              <p class="contact-card__label">ফোন নম্বর</p>
+              <p class="contact-card__value"><a href="tel:+8802XXXXXXXX">+880 2-XXXXXXXX</a></p>
+              <p class="contact-card__subvalue">+880 1X-XXXXXXXX (মোবাইল)</p>
+            </article>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <article class="contact-card animate-fade-up">
+              <div class="contact-card__icon"><i class="bi bi-envelope-fill" aria-hidden="true"></i></div>
+              <p class="contact-card__label">ইমেইল</p>
+              <p class="contact-card__value"><a href="mailto:info@adarshaschool.edu.bd">info@adarshaschool.edu.bd</a></p>
+              <p class="contact-card__subvalue">admission@adarshaschool.edu.bd</p>
+            </article>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <article class="contact-card animate-fade-up">
+              <div class="contact-card__icon contact-card__icon--warning"><i class="bi bi-clock-fill" aria-hidden="true"></i></div>
+              <p class="contact-card__label">অফিস সময়</p>
+              <p class="contact-card__value">সোম – শুক্রবার</p>
+              <p class="contact-card__subvalue">সকাল ৯:০০টা – বিকেল ৫:০০টা</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-form-map">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="animate-fade-up">
+              <h2 class="contact-section-title">বার্তা পাঠান</h2>
+              <p class="contact-section-subtitle">আমরা ২৪ ঘণ্টার মধ্যে আপনার সাথে যোগাযোগ করব।</p>
+              <div class="contact-accent-line"></div>
+            </div>
+
+            <div class="contact-form-wrapper mt-4 animate-fade-up">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contactName" class="form-label">আপনার নাম *</label>
+                  <input type="text" class="form-control" id="contactName" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                  <div class="invalid-feedback">নাম আবশ্যক।</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactPhone" class="form-label">মোবাইল নম্বর *</label>
+                  <input type="tel" class="form-control" id="contactPhone" placeholder="01XXXXXXXXX" required>
+                  <div class="invalid-feedback">সঠিক মোবাইল নম্বর লিখুন।</div>
+                </div>
+                <div class="col-12">
+                  <label for="contactEmail" class="form-label">ইমেইল ঠিকানা</label>
+                  <input type="email" class="form-control" id="contactEmail" placeholder="example@email.com">
+                  <div class="invalid-feedback">সঠিক ইমেইল ঠিকানা লিখুন।</div>
+                </div>
+                <div class="col-12">
+                  <label for="contactSubject" class="form-label">বিষয় *</label>
+                  <select class="form-select" id="contactSubject" required>
+                    <option value="">— বিষয় নির্বাচন করুন —</option>
+                    <option value="admission">ভর্তি সংক্রান্ত</option>
+                    <option value="notice">নোটিশ / তথ্য</option>
+                    <option value="academic">একাডেমিক বিষয়</option>
+                    <option value="complaint">অভিযোগ / GRS</option>
+                    <option value="other">অন্যান্য</option>
+                  </select>
+                  <div class="invalid-feedback">বিষয় নির্বাচন করুন।</div>
+                </div>
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label">বার্তা *</label>
+                  <textarea class="form-control" id="contactMessage" rows="6" placeholder="আপনার বার্তা বিস্তারিতভাবে লিখুন" maxlength="500" required></textarea>
+                  <div class="invalid-feedback">বার্তা আবশ্যক।</div>
+                  <div class="char-counter" id="charCounter">0 / ৫০০ অক্ষর</div>
+                </div>
+                <div class="col-12">
+                  <button type="button" class="btn-school-primary w-100" id="contactSubmitBtn">
+                    <i class="bi bi-send-fill me-2" aria-hidden="true"></i> বার্তা পাঠান
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="animate-fade-up">
+              <h2 class="contact-section-title">আমাদের অবস্থান</h2>
+              <p class="contact-section-subtitle">আমাদের বিদ্যালয়ে আসার পথ নির্দেশনা</p>
+              <div class="contact-accent-line"></div>
+            </div>
+
+            <div class="contact-map-wrap mt-4 animate-fade-up">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.5!2d90.3690!3d23.8041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ4JzE0LjgiTiA5MMKwMjInMDguNCJF!5e0!3m2!1sen!2sbd!4v1234567890"
+                title="আদর্শ উচ্চ বিদ্যালয় ও কলেজ অবস্থান"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+            </div>
+
+            <div class="contact-directions animate-fade-up">
+              <h3 class="contact-directions__title"><i class="bi bi-signpost-2-fill me-2" aria-hidden="true"></i>কিভাবে আসবেন</h3>
+              <ul class="contact-directions__list">
+                <li>
+                  <span class="contact-directions__icon"><i class="bi bi-bus-front-fill" aria-hidden="true"></i></span>
+                  <div>
+                    <p class="contact-directions__item-title">বাসে আসতে</p>
+                    <p class="contact-directions__item-detail">মিরপুর-১০ গোলচত্বর থেকে ৫ মিনিট হাঁটা দূরত্বে</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-directions__icon"><i class="bi bi-train-front-fill" aria-hidden="true"></i></span>
+                  <div>
+                    <p class="contact-directions__item-title">মেট্রোরেলে</p>
+                    <p class="contact-directions__item-detail">মিরপুর-১০ স্টেশন থেকে ৩ মিনিট হাঁটা</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="contact-directions__icon"><i class="bi bi-car-front-fill" aria-hidden="true"></i></span>
+                  <div>
+                    <p class="contact-directions__item-title">গাড়িতে আসতে</p>
+                    <p class="contact-directions__item-detail">আদর্শ রোড ধরে এসে প্রধান গেটে প্রবেশ করুন</p>
+                  </div>
+                </li>
+              </ul>
+              <a class="contact-directions__link" href="#" target="_blank" rel="noopener noreferrer">
+                Google Maps-এ দেখুন <i class="bi bi-box-arrow-up-right ms-1" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="office-hours">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title">বিভাগীয় যোগাযোগ</h2>
+          <p class="section-header__subtitle" lang="en">Department Contacts</p>
+          <div class="section-header__underline"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <article class="dept-card animate-fade-up">
+              <div class="dept-card__top">
+                <h3 class="dept-card__title">একাডেমিক বিভাগ</h3>
+                <div class="dept-card__icon"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i></div>
+              </div>
+              <div class="dept-card__divider"></div>
+              <p class="dept-card__line"><i class="bi bi-person-fill" aria-hidden="true"></i> জনাব মোহাম্মদ আব্দুল করিম (প্রধান শিক্ষক)</p>
+              <p class="dept-card__line"><i class="bi bi-telephone" aria-hidden="true"></i> +880 2-XXXXXXXX ext. 101</p>
+              <p class="dept-card__line"><i class="bi bi-clock" aria-hidden="true"></i> সোম–শুক্র, সকাল ৯টা–বিকেল ৫টা</p>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="dept-card animate-fade-up">
+              <div class="dept-card__top">
+                <h3 class="dept-card__title">ভর্তি বিভাগ</h3>
+                <div class="dept-card__icon"><i class="bi bi-clipboard-check-fill" aria-hidden="true"></i></div>
+              </div>
+              <div class="dept-card__divider"></div>
+              <p class="dept-card__line"><i class="bi bi-person-fill" aria-hidden="true"></i> জনাব রফিকুল ইসলাম</p>
+              <p class="dept-card__line"><i class="bi bi-telephone" aria-hidden="true"></i> +880 1X-XXXXXXXX</p>
+              <p class="dept-card__line"><i class="bi bi-clock" aria-hidden="true"></i> সোম–বৃহস্পতি, সকাল ১০টা–বিকেল ৪টা</p>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="dept-card animate-fade-up">
+              <div class="dept-card__top">
+                <h3 class="dept-card__title">হিসাব বিভাগ</h3>
+                <div class="dept-card__icon"><i class="bi bi-cash-coin" aria-hidden="true"></i></div>
+              </div>
+              <div class="dept-card__divider"></div>
+              <p class="dept-card__line"><i class="bi bi-person-fill" aria-hidden="true"></i> জনাব সিরাজুল হক</p>
+              <p class="dept-card__line"><i class="bi bi-telephone" aria-hidden="true"></i> +880 2-XXXXXXXX ext. 102</p>
+              <p class="dept-card__line"><i class="bi bi-clock" aria-hidden="true"></i> সোম–শুক্র, সকাল ১০টা–বিকেল ৩টা</p>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="dept-card animate-fade-up">
+              <div class="dept-card__top">
+                <h3 class="dept-card__title">পরীক্ষা বিভাগ</h3>
+                <div class="dept-card__icon"><i class="bi bi-journal-text" aria-hidden="true"></i></div>
+              </div>
+              <div class="dept-card__divider"></div>
+              <p class="dept-card__line"><i class="bi bi-person-fill" aria-hidden="true"></i> জনাবা নাসরিন আক্তার</p>
+              <p class="dept-card__line"><i class="bi bi-telephone" aria-hidden="true"></i> +880 2-XXXXXXXX ext. 103</p>
+              <p class="dept-card__line"><i class="bi bi-clock" aria-hidden="true"></i> সোম–শুক্র, সকাল ৯টা–বিকেল ৪টা</p>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="dept-card animate-fade-up">
+              <div class="dept-card__top">
+                <h3 class="dept-card__title">প্রশাসন বিভাগ</h3>
+                <div class="dept-card__icon"><i class="bi bi-house-fill" aria-hidden="true"></i></div>
+              </div>
+              <div class="dept-card__divider"></div>
+              <p class="dept-card__line"><i class="bi bi-person-fill" aria-hidden="true"></i> জনাব আবু সাঈদ</p>
+              <p class="dept-card__line"><i class="bi bi-telephone" aria-hidden="true"></i> +880 2-XXXXXXXX ext. 104</p>
+              <p class="dept-card__line"><i class="bi bi-clock" aria-hidden="true"></i> সোম–শুক্র, সকাল ৯টা–বিকেল ৫টা</p>
+            </article>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <article class="dept-card animate-fade-up">
+              <div class="dept-card__top">
+                <h3 class="dept-card__title">অভিভাবক সেবা</h3>
+                <div class="dept-card__icon"><i class="bi bi-people-fill" aria-hidden="true"></i></div>
+              </div>
+              <div class="dept-card__divider"></div>
+              <p class="dept-card__line"><i class="bi bi-person-fill" aria-hidden="true"></i> জনাবা তাহমিনা বেগম</p>
+              <p class="dept-card__line"><i class="bi bi-telephone" aria-hidden="true"></i> +880 1X-XXXXXXXX</p>
+              <p class="dept-card__line"><i class="bi bi-clock" aria-hidden="true"></i> শনিবার–বৃহস্পতিবার, সকাল ১০টা–দুপুর ২টা</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top-strip">
+      <div class="container">
+        <div class="footer-top-strip__content">
+          <p class="footer-top-strip__title">🎓 ২০২৫ সালের ভর্তি কার্যক্রম চলছে</p>
+          <a class="btn-school-accent" href="admission.html">ভর্তির জন্য আবেদন করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-logo-block">
+              <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+              <div>
+                <p class="footer-logo-block__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</p>
+                <p class="footer-logo-block__subtitle">Adarsha High School &amp; College</p>
+              </div>
+            </div>
+            <hr class="footer-rule">
+            <p class="footer-description">১৯৬৫ সাল থেকে মানসম্মত শিক্ষা, মানবিক মূল্যবোধ এবং আধুনিক প্রযুক্তিনির্ভর শেখার পরিবেশ গড়ে তুলতে আমরা কাজ করে যাচ্ছি।</p>
+            <span class="footer-eiin">EIIN: 123456</span>
+            <div class="footer-social">
+              <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+              <a href="https://x.com" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h2 class="footer-heading">দ্রুত লিঙ্ক</h2>
+            <ul class="footer-links">
+              <li><a href="index.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> হোম</a></li>
+              <li><a href="about.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> আমাদের বিদ্যালয়</a></li>
+              <li><a href="head-teacher.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> প্রধান শিক্ষকের বাণী</a></li>
+              <li><a href="teachers.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> শিক্ষক-কর্মচারী</a></li>
+              <li><a href="committee.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> পরিচালনা কমিটি</a></li>
+              <li><a href="admission.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ভর্তি তথ্য</a></li>
+              <li><a href="notices.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> নোটিশ বোর্ড</a></li>
+              <li><a href="events.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ইভেন্ট ও সংবাদ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h2 class="footer-heading">একাডেমিক</h2>
+            <ul class="footer-links">
+              <li><a href="academic.html#calendar"><i class="bi bi-chevron-right" aria-hidden="true"></i> একাডেমিক ক্যালেন্ডার</a></li>
+              <li><a href="academic.html#routine"><i class="bi bi-chevron-right" aria-hidden="true"></i> শ্রেণি রুটিন</a></li>
+              <li><a href="academic.html#syllabus"><i class="bi bi-chevron-right" aria-hidden="true"></i> সিলেবাস</a></li>
+              <li><a href="academic.html#exam"><i class="bi bi-chevron-right" aria-hidden="true"></i> পরীক্ষার তথ্য</a></li>
+              <li><a href="results.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ফলাফল</a></li>
+              <li><a href="downloads.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ডাউনলোড সেন্টার</a></li>
+              <li><a href="gallery.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> গ্যালারি</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> যোগাযোগ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h2 class="footer-heading">যোগাযোগ</h2>
+            <ul class="footer-contact-list">
+              <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> আদর্শ রোড, মিরপুর-১০, ঢাকা-১২১৬</li>
+              <li><i class="bi bi-telephone-fill" aria-hidden="true"></i> +880 2-XXXXXXXX</li>
+              <li><i class="bi bi-envelope-fill" aria-hidden="true"></i> info@adarshaschool.edu.bd</li>
+              <li><i class="bi bi-clock-fill" aria-hidden="true"></i> সোম–শুক্র: সকাল ৯টা – বিকেল ৫টা</li>
+            </ul>
+            <a class="mt-2 d-inline-flex align-items-center" href="#">
+              <i class="bi bi-map me-2" aria-hidden="true"></i> গুগল ম্যাপে দেখুন
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__content">
+          <div class="footer-bottom__copy">© ২০২৫ আদর্শ উচ্চ বিদ্যালয় ও কলেজ। সর্বস্বত্ব সংরক্ষিত।</div>
+          <div class="footer-bottom__links">
+            <a href="privacy.html">গোপনীয়তা নীতি</a>
+            <a href="sitemap.html">সাইটম্যাপ</a>
+            <a href="grs.html">GRS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="contact-toast" id="contactSuccessToast" role="status" aria-live="polite">
+    <i class="bi bi-check-circle-fill contact-toast__icon" aria-hidden="true"></i>
+    <span>আপনার বার্তা সফলভাবে পাঠানো হয়েছে!</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const contactName = document.getElementById("contactName");
+      const contactPhone = document.getElementById("contactPhone");
+      const contactEmail = document.getElementById("contactEmail");
+      const contactSubject = document.getElementById("contactSubject");
+      const contactMessage = document.getElementById("contactMessage");
+      const submitBtn = document.getElementById("contactSubmitBtn");
+      const successToast = document.getElementById("contactSuccessToast");
+      const charCounter = document.getElementById("charCounter");
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phonePattern = /^01[3-9]\d{8}$/;
+
+      const clearFieldState = (field) => {
+        field.classList.remove("is-invalid", "is-valid");
+      };
+
+      const setInvalid = (field) => {
+        field.classList.add("is-invalid");
+        field.classList.remove("is-valid");
+      };
+
+      const setValid = (field) => {
+        field.classList.add("is-valid");
+        field.classList.remove("is-invalid");
+      };
+
+      const showToast = () => {
+        successToast.classList.add("is-visible");
+        window.setTimeout(() => {
+          successToast.classList.remove("is-visible");
+        }, 4000);
+      };
+
+      const validate = () => {
+        let isValid = true;
+
+        [contactName, contactPhone, contactEmail, contactSubject, contactMessage].forEach(clearFieldState);
+
+        if (!contactName.value.trim()) {
+          setInvalid(contactName);
+          isValid = false;
+        } else {
+          setValid(contactName);
+        }
+
+        if (!phonePattern.test(contactPhone.value.trim())) {
+          setInvalid(contactPhone);
+          isValid = false;
+        } else {
+          setValid(contactPhone);
+        }
+
+        if (contactEmail.value.trim() && !emailPattern.test(contactEmail.value.trim())) {
+          setInvalid(contactEmail);
+          isValid = false;
+        } else if (contactEmail.value.trim()) {
+          setValid(contactEmail);
+        }
+
+        if (!contactSubject.value) {
+          setInvalid(contactSubject);
+          isValid = false;
+        } else {
+          setValid(contactSubject);
+        }
+
+        if (contactMessage.value.trim().length < 10) {
+          setInvalid(contactMessage);
+          isValid = false;
+        } else {
+          setValid(contactMessage);
+        }
+
+        return isValid;
+      };
+
+      contactMessage.addEventListener("input", () => {
+        charCounter.textContent = `${contactMessage.value.length} / ৫০০ অক্ষর`;
+        if (contactMessage.value.trim().length >= 10) {
+          contactMessage.classList.remove("is-invalid");
+        }
+      });
+
+      [contactName, contactPhone, contactEmail, contactSubject, contactMessage].forEach((field) => {
+        field.addEventListener("input", () => {
+          if (field === contactEmail && !field.value.trim()) {
+            clearFieldState(field);
+            return;
+          }
+
+          if (field === contactPhone) {
+            if (phonePattern.test(field.value.trim())) {
+              setValid(field);
+            }
+            return;
+          }
+
+          if (field === contactMessage) {
+            if (field.value.trim().length >= 10) {
+              setValid(field);
+            }
+            return;
+          }
+
+          if (field.value.trim() || field.tagName === "SELECT") {
+            clearFieldState(field);
+          }
+        });
+      });
+
+      submitBtn.addEventListener("click", () => {
+        if (!validate()) {
+          return;
+        }
+
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>পাঠানো হচ্ছে...';
+
+        window.setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalContent;
+          showToast();
+
+          contactName.value = "";
+          contactPhone.value = "";
+          contactEmail.value = "";
+          contactSubject.value = "";
+          contactMessage.value = "";
+          charCounter.textContent = "0 / ৫০০ অক্ষর";
+
+          [contactName, contactPhone, contactEmail, contactSubject, contactMessage].forEach(clearFieldState);
+        }, 1500);
+      });
+
+      const animateObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".animate-fade-up").forEach((element) => animateObserver.observe(element));
+
+      document.querySelectorAll(".row > [class*='col'] .animate-fade-up").forEach((element, index) => {
+        element.style.transitionDelay = `${(index % 4) * 0.1}s`;
+      });
+    });
+  </script>
+</body>
+</html>

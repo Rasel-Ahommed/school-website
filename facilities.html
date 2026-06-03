@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সুযোগ-সুবিধা | আদর্শ উচ্চ বিদ্যালয় ও কলেজ</title>
+  <meta name="description" content="আদর্শ উচ্চ বিদ্যালয় ও কলেজের শ্রেণিকক্ষ, গ্রন্থাগার, বিজ্ঞানাগার, কম্পিউটার ল্যাব, খেলার মাঠসহ সকল সুযোগ-সুবিধার বিস্তারিত।">
+  <meta property="og:title" content="সুযোগ-সুবিধা | আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="facilities.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    .facilities-page button:focus-visible,
+    .facilities-page a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .facilities-page .page-hero {
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    }
+
+    .facilities-page .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, var(--white) 0 1px, transparent 1px 20px);
+      opacity: 0.06;
+    }
+
+    .facilities-page .page-hero::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: var(--white);
+      opacity: 0.06;
+    }
+
+    .facility-hero-copy {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .facility-hero-copy .page-hero__breadcrumb {
+      justify-content: center;
+      margin-bottom: 12px;
+      color: var(--white);
+      opacity: 0.8;
+    }
+
+    .facility-hero-copy .page-hero__breadcrumb a {
+      color: inherit;
+    }
+
+    .facility-hero-copy .page-hero__title {
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .facility-hero-copy .page-hero__subtitle {
+      color: var(--white);
+      opacity: 0.8;
+    }
+
+    .facility-hero-lines {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .facility-hero-lines__line {
+      width: 60px;
+      height: 1px;
+      background: var(--white);
+      opacity: 0.24;
+    }
+
+    .facility-stats-strip {
+      padding: 40px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .facility-stat-card {
+      padding: 24px 16px;
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .facility-stat-card--last {
+      border-right: 0;
+    }
+
+    .facility-stat-card__icon {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-size: 22px;
+    }
+
+    .facility-stat-card__count {
+      display: block;
+      color: var(--primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .facility-stat-card__label {
+      margin-top: 4px;
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 14px;
+    }
+
+    .facilities-main-section,
+    .welfare-section {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+
+    .virtual-tour-section {
+      padding: 56px 0;
+      background: var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .virtual-tour-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, var(--white) 0 1px, transparent 1px 20px);
+      opacity: 0.06;
+    }
+
+    .infrastructure-section {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .facilities-cta {
+      padding: 56px 0;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .section-header__title {
+      margin: 0 0 6px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .section-header__subtitle {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .section-header__underline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .section-header__line {
+      width: 40px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--primary);
+    }
+
+    .section-header__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .facility-card {
+      height: 100%;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .facility-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .facility-card__img {
+      min-height: 240px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-light);
+      overflow: hidden;
+    }
+
+    .facility-card__img i {
+      color: var(--primary);
+      font-size: 4rem;
+      opacity: 0.35;
+    }
+
+    .facility-card__ribbon {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      padding: 4px 14px 4px 10px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      background: var(--primary);
+      color: var(--white);
+      font-family: var(--font-bengali);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .facility-card__status {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--success);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .facility-card__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 24px;
+      height: 100%;
+    }
+
+    .facility-card__title {
+      margin: 0 0 8px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .facility-card__subtitle {
+      margin-bottom: 12px;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .facility-card__desc {
+      margin: 0 0 16px;
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      line-height: 1.8;
+    }
+
+    .facility-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .facility-features li {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-sm);
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-family: var(--font-bengali);
+      font-size: 12px;
+    }
+
+    .facility-features i {
+      margin-right: 4px;
+      font-size: 12px;
+    }
+
+    .facility-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .facility-card__capacity {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .facility-card__capacity i {
+      margin-right: 6px;
+    }
+
+    .facility-card__link {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .facility-card__link:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    .virtual-tour-content,
+    .facilities-cta__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .virtual-tour-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      font-size: 40px;
+    }
+
+    .virtual-tour-icons .arrow {
+      font-size: 20px;
+      opacity: 0.5;
+    }
+
+    .virtual-tour-title,
+    .facilities-cta__title {
+      margin: 0 0 8px;
+      color: var(--white);
+      font-family: var(--font-bengali);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .virtual-tour-text,
+    .facilities-cta__text {
+      margin: 0 0 28px;
+      color: var(--white);
+      opacity: 0.8;
+      font-size: 15px;
+    }
+
+    .virtual-tour-actions,
+    .facilities-cta__actions {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-facility-white,
+    .btn-facility-accent,
+    .btn-facility-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .btn-facility-white {
+      background: var(--white);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .btn-facility-white:hover {
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    .btn-facility-accent {
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .btn-facility-accent:hover {
+      background: var(--accent-dark);
+      color: var(--white);
+    }
+
+    .btn-facility-outline {
+      color: var(--white);
+      font-weight: 500;
+      box-shadow: inset 0 0 0 2px var(--white);
+    }
+
+    .btn-facility-outline:hover {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .infra-table {
+      width: 100%;
+    }
+
+    .infra-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .infra-row:last-child {
+      border-bottom: 0;
+    }
+
+    .infra-row__label {
+      flex: 0 0 200px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .infra-row__label i {
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    .infra-row__value {
+      flex: 1;
+      color: var(--text-secondary);
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .building-diagram {
+      height: 100%;
+      min-height: 360px;
+      padding: 28px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      background: var(--gray-50);
+    }
+
+    .building-diagram__title {
+      margin: 0 0 16px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .building-diagram__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .floor-box {
+      padding: 12px;
+      border: 2px solid var(--primary-border);
+      border-radius: var(--radius-md);
+      background: var(--primary-subtle);
+      color: var(--primary);
+      text-align: center;
+      font-family: var(--font-bengali);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .floor-box i {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .welfare-card {
+      height: 100%;
+      padding: 28px 24px;
+      border: 1px solid var(--border-color);
+      border-top-width: 4px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .welfare-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .welfare-card--accent {
+      border-top-color: var(--accent);
+    }
+
+    .welfare-card--success {
+      border-top-color: var(--success);
+    }
+
+    .welfare-card--primary {
+      border-top-color: var(--primary);
+    }
+
+    .welfare-card--warning {
+      border-top-color: var(--warning);
+    }
+
+    .welfare-card__icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 22px;
+    }
+
+    .welfare-card__icon--accent {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .welfare-card__icon--success {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .welfare-card__icon--primary {
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    .welfare-card__icon--warning {
+      background: var(--warning-light);
+      color: var(--warning);
+    }
+
+    .welfare-card__title {
+      margin: 0 0 10px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .welfare-card__desc {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      line-height: 1.8;
+    }
+
+    .welfare-card__list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .welfare-card__list li {
+      margin-bottom: 6px;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .welfare-card__list i {
+      margin-right: 8px;
+      color: var(--success);
+      font-size: 12px;
+    }
+
+    .facilities-cta__icon {
+      margin-bottom: 16px;
+      color: var(--warning);
+      font-size: 48px;
+    }
+
+    @media (max-width: 991.98px) {
+      .facility-stat-card {
+        border-right: 0;
+      }
+
+      .infra-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .infra-row__label,
+      .infra-row__value {
+        flex: initial;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .facility-hero-lines__line {
+        width: 40px;
+      }
+
+      .facility-card__img {
+        min-height: 200px;
+      }
+
+      .building-diagram__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .virtual-tour-icons {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body class="facilities-page">
+  <header>
+    <div class="topbar d-none d-xl-flex">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="topbar__left">
+          <span><span aria-hidden="true">🇧🇩</span> গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</span>
+          <span>|</span>
+          <span>জাতীয় শিক্ষা সপ্তাহ ২০২৫</span>
+        </div>
+        <div class="topbar__right">
+          <span><i class="bi bi-telephone-fill"></i> +880 2-XXXXXXXX</span>
+          <span><i class="bi bi-envelope-fill"></i> info@adarshaschool.edu.bd</span>
+          <div class="topbar__social">
+            <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-navbar navbar navbar-expand-xl">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+          <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+          <span>
+            <span class="navbar-brand__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</span>
+            <span class="navbar-brand__subtitle">Adarsha High School &amp; College, Dhaka</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolNavbar" aria-controls="schoolNavbar" aria-expanded="false" aria-label="নেভিগেশন খুলুন">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="schoolNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">আমাদের বিদ্যালয়</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="about.html#history">ইতিহাস</a></li>
+                <li><a class="dropdown-item" href="about.html#mission">লক্ষ্য ও উদ্দেশ্য</a></li>
+                <li><a class="dropdown-item" href="institute-info.html">প্রতিষ্ঠান তথ্য</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">প্রশাসন</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="head-teacher.html">প্রধান শিক্ষকের বাণী</a></li>
+                <li><a class="dropdown-item" href="committee.html">পরিচালনা কমিটি</a></li>
+                <li><a class="dropdown-item" href="teachers.html">শিক্ষক-কর্মচারী</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">একাডেমিক</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="academic.html#calendar">একাডেমিক ক্যালেন্ডার</a></li>
+                <li><a class="dropdown-item" href="academic.html#routine">শ্রেণি রুটিন</a></li>
+                <li><a class="dropdown-item" href="academic.html#syllabus">সিলেবাস</a></li>
+                <li><a class="dropdown-item" href="academic.html#exam">পরীক্ষার তথ্য</a></li>
+                <li><a class="dropdown-item" href="results.html">ফলাফল</a></li>
+                <li><a class="dropdown-item" href="academic.html#promotion">প্রমোশন বিধি</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="admission.html">ভর্তি</a></li>
+            <li class="nav-item"><a class="nav-link" href="notices.html">নোটিশ বোর্ড</a></li>
+            <li class="nav-item"><a class="nav-link" href="achievements.html">অর্জন</a></li>
+            <li class="nav-item"><a class="nav-link active" href="facilities.html" aria-current="page">সুযোগ-সুবিধা</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">গ্যালারি</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">যোগাযোগ</a></li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a class="btn-school-accent" href="admission.html"><i class="bi bi-pencil-square me-1"></i> ভর্তি আবেদন</a>
+            <button class="btn-navbar-icon" type="button" aria-label="অনুসন্ধান">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero" aria-label="সুযোগ-সুবিধা">
+      <div class="container page-hero__content">
+        <div class="facility-hero-copy animate-fade-up">
+          <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html"><i class="bi bi-house-fill"></i> হোম</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">সুযোগ-সুবিধা</span>
+          </nav>
+          <div class="facility-hero-lines" aria-hidden="true">
+            <span class="facility-hero-lines__line"></span>
+            <span class="facility-hero-lines__line"></span>
+          </div>
+          <h1 class="page-hero__title">সুযোগ-সুবিধা</h1>
+          <p class="page-hero__subtitle" lang="en">Facilities &amp; Infrastructure</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="facility-stats-strip">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-lg-3 col-sm-6">
+            <article class="facility-stat-card animate-fade-up">
+              <div class="facility-stat-card__icon"><i class="bi bi-building" aria-hidden="true"></i></div>
+              <span class="facility-stat-card__count stat-count" data-target="3">০</span>
+              <div class="facility-stat-card__label">একাডেমিক ভবন</div>
+            </article>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <article class="facility-stat-card animate-fade-up">
+              <div class="facility-stat-card__icon"><i class="bi bi-door-open-fill" aria-hidden="true"></i></div>
+              <span class="facility-stat-card__count stat-count" data-target="45">০</span>
+              <div class="facility-stat-card__label">শ্রেণিকক্ষ</div>
+            </article>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <article class="facility-stat-card animate-fade-up">
+              <div class="facility-stat-card__icon"><i class="bi bi-pc-display" aria-hidden="true"></i></div>
+              <span class="facility-stat-card__count stat-count" data-target="80">০</span>
+              <div class="facility-stat-card__label">কম্পিউটার</div>
+            </article>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <article class="facility-stat-card facility-stat-card--last animate-fade-up">
+              <div class="facility-stat-card__icon"><i class="bi bi-book-half" aria-hidden="true"></i></div>
+              <span class="facility-stat-card__count stat-count" data-target="8000">০</span>
+              <div class="facility-stat-card__label">গ্রন্থাগার বই</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="facilities-main-section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title">আমাদের সুযোগ-সুবিধা</h2>
+          <p class="section-header__subtitle" lang="en">Our Facilities &amp; Infrastructure</p>
+          <div class="section-header__underline" aria-hidden="true">
+            <span class="section-header__line"></span>
+            <span class="section-header__dot"></span>
+            <span class="section-header__line"></span>
+          </div>
+        </div>
+        <div class="row g-4" id="facilityGrid"></div>
+      </div>
+    </section>
+
+    <section class="virtual-tour-section">
+      <div class="container">
+        <div class="virtual-tour-content animate-fade-up">
+          <div class="virtual-tour-icons" aria-hidden="true">
+            <i class="bi bi-building"></i>
+            <i class="bi bi-arrow-right arrow"></i>
+            <i class="bi bi-camera-video"></i>
+            <i class="bi bi-arrow-right arrow"></i>
+            <i class="bi bi-mortarboard"></i>
+          </div>
+          <h2 class="virtual-tour-title">আমাদের বিদ্যালয় ঘুরে দেখুন</h2>
+          <p class="virtual-tour-text">আমাদের সুযোগ-সুবিধা সরেজমিনে পরিদর্শন করতে আজই যোগাযোগ করুন</p>
+          <div class="virtual-tour-actions">
+            <a class="btn-facility-white" href="contact.html"><i class="bi bi-calendar-check me-2" aria-hidden="true"></i>পরিদর্শনের আবেদন করুন</a>
+            <a class="btn-facility-outline" href="admission.html"><i class="bi bi-info-circle me-2" aria-hidden="true"></i>ভর্তি তথ্য দেখুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="infrastructure-details" class="infrastructure-section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title">অবকাঠামো তথ্য</h2>
+          <p class="section-header__subtitle" lang="en">Infrastructure Details</p>
+          <div class="section-header__underline" aria-hidden="true">
+            <span class="section-header__line"></span>
+            <span class="section-header__dot"></span>
+          </div>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="infra-table animate-fade-up" id="infraTable"></div>
+          </div>
+          <div class="col-lg-6">
+            <div class="building-diagram animate-fade-up">
+              <h3 class="building-diagram__title">বিদ্যালয় ভবন বিন্যাস</h3>
+              <div class="building-diagram__grid" id="buildingDiagramGrid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="welfare-section">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title">নিরাপত্তা ও কল্যাণ</h2>
+          <p class="section-header__subtitle" lang="en">Safety &amp; Student Welfare</p>
+          <div class="section-header__underline" aria-hidden="true">
+            <span class="section-header__line"></span>
+            <span class="section-header__dot"></span>
+          </div>
+        </div>
+        <div class="row g-4" id="welfareGrid"></div>
+      </div>
+    </section>
+
+    <section class="facilities-cta">
+      <div class="container">
+        <div class="facilities-cta__content animate-fade-up">
+          <div class="facilities-cta__icon"><i class="bi bi-building-fill-check" aria-hidden="true"></i></div>
+          <h2 class="facilities-cta__title">আমাদের বিদ্যালয়ে আপনার সন্তানকে ভর্তি করুন</h2>
+          <p class="facilities-cta__text">উন্নত শিক্ষা পরিবেশ ও আধুনিক সুযোগ-সুবিধায় গড়ে উঠুক আগামী প্রজন্ম</p>
+          <div class="facilities-cta__actions">
+            <a class="btn-facility-accent" href="admission.html"><i class="bi bi-pencil-square me-2" aria-hidden="true"></i>ভর্তির আবেদন করুন</a>
+            <a class="btn-facility-outline" href="contact.html"><i class="bi bi-telephone me-2" aria-hidden="true"></i>যোগাযোগ করুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top-strip">
+      <div class="container">
+        <div class="footer-top-strip__content">
+          <p class="footer-top-strip__title">🎓 ২০২৫ সালের ভর্তি কার্যক্রম চলছে</p>
+          <a class="btn-school-accent bn-text" href="admission.html">ভর্তির জন্য আবেদন করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-logo-block">
+              <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+              <div>
+                <h3 class="footer-logo-block__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</h3>
+                <span class="footer-logo-block__subtitle">Adarsha High School &amp; College</span>
+              </div>
+            </div>
+            <div class="footer-rule"></div>
+            <p class="footer-description">১৯৬৫ সাল থেকে মানসম্মন্ন শিক্ষা প্রদান করে আসছে আদর্শ উচ্চ বিদ্যালয়। আমাদের লক্ষ্য জ্ঞান, নৈতিকতা ও দেশপ্রেমে সমৃদ্ধ নাগরিক গড়ে তোলা।</p>
+            <span class="footer-eiin">EIIN: 123456</span>
+            <div class="footer-social">
+              <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="https://x.com" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h3 class="footer-heading">দ্রুত লিংক</h3>
+            <ul class="footer-links">
+              <li><a href="index.html"><i class="bi bi-chevron-right"></i> হোম</a></li>
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> আমাদের বিদ্যালয়</a></li>
+              <li><a href="head-teacher.html"><i class="bi bi-chevron-right"></i> প্রধান শিক্ষকের বাণী</a></li>
+              <li><a href="teachers.html"><i class="bi bi-chevron-right"></i> শিক্ষক-কর্মচারী</a></li>
+              <li><a href="committee.html"><i class="bi bi-chevron-right"></i> পরিচালনা কমিটি</a></li>
+              <li><a href="admission.html"><i class="bi bi-chevron-right"></i> ভর্তি তথ্য</a></li>
+              <li><a href="notices.html"><i class="bi bi-chevron-right"></i> নোটিশ বোর্ড</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h3 class="footer-heading">একাডেমিক</h3>
+            <ul class="footer-links">
+              <li><a href="academic.html#calendar"><i class="bi bi-chevron-right"></i> একাডেমিক ক্যালেন্ডার</a></li>
+              <li><a href="academic.html#routine"><i class="bi bi-chevron-right"></i> শ্রেণি রুটিন</a></li>
+              <li><a href="academic.html#exam"><i class="bi bi-chevron-right"></i> পরীক্ষার তথ্য</a></li>
+              <li><a href="results.html"><i class="bi bi-chevron-right"></i> ফলাফল</a></li>
+              <li><a href="downloads.html"><i class="bi bi-chevron-right"></i> ডাউনলোড সেন্টার</a></li>
+              <li><a href="gallery.html"><i class="bi bi-chevron-right"></i> গ্যালারি</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> যোগাযোগ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h3 class="footer-heading">যোগাযোগ</h3>
+            <ul class="footer-contact-list">
+              <li><i class="bi bi-geo-alt-fill"></i><span>আদর্শ রোড, মিরপুর, ঢাকা-১২১৬</span></li>
+              <li><i class="bi bi-telephone-fill"></i><span>+880 2-XXXXXXXX</span></li>
+              <li><i class="bi bi-envelope-fill"></i><span>info@adarshaschool.edu.bd</span></li>
+              <li><i class="bi bi-clock-fill"></i><span>সোম–শুক্র: সকাল ৯টা – বিকেল ৫টা</span></li>
+              <li><i class="bi bi-map"></i><span><a href="https://maps.google.com" target="_blank" rel="noreferrer">গুগল ম্যাপে দেখুন</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__content">
+          <div class="footer-bottom__copy">© ২০২৫ আদর্শ উচ্চ বিদ্যালয় ও কলেজ। সর্বস্বত্ব সংরক্ষিত।</div>
+          <div class="footer-bottom__links">
+            <a href="privacy.html">গোপনীয়তা নীতি</a>
+            <a href="sitemap.html">সাইটম্যাপ</a>
+            <a href="grs.html">GRS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/app.js" defer></script>
+  <script>
+    const facilitiesData = [
+      {
+        title: "ডিজিটাল শ্রেণিকক্ষ",
+        subtitle: "Digital Classrooms",
+        category: "শিক্ষা",
+        icon: "bi-easel2-fill",
+        description: "আমাদের ৪৫টি শ্রেণিকক্ষ সম্পূর্ণ ডিজিটাল পদ্ধতিতে সজ্জিত। প্রতিটি কক্ষে মাল্টিমিডিয়া প্রজেক্টর, ইন্টারেক্টিভ হোয়াইটবোর্ড এবং উচ্চগতির ইন্টারনেট সংযোগ রয়েছে।",
+        features: ["ইন্টারেক্টিভ বোর্ড", "মাল্টিমিডিয়া প্রজেক্টর", "এসি সুবিধা", "উচ্চগতির ইন্টারনেট", "CCTV"],
+        capacity: "প্রতি কক্ষে ৪০ জন শিক্ষার্থী"
+      },
+      {
+        title: "কেন্দ্রীয় গ্রন্থাগার",
+        subtitle: "Central Library",
+        category: "গ্রন্থাগার",
+        icon: "bi-book-half",
+        description: "৮,০০০ এরও বেশি বই সমৃদ্ধ আমাদের কেন্দ্রীয় গ্রন্থাগার। পাঠ্যবইয়ের পাশাপাশি রয়েছে বিশ্বসাহিত্য, বিজ্ঞান, ইতিহাস ও রেফারেন্স বইয়ের বিশাল সংগ্রহ।",
+        features: ["৮,০০০+ বই", "ডিজিটাল ক্যাটালগ", "রিডিং জোন", "পত্রিকা কর্নার", "গবেষণা সহায়তা"],
+        capacity: "একসাথে ৬০ জন পাঠক"
+      },
+      {
+        title: "বিজ্ঞান গবেষণাগার",
+        subtitle: "Science Laboratory",
+        category: "বিজ্ঞান",
+        icon: "bi-eyedropper",
+        description: "পদার্থবিজ্ঞান, রসায়ন ও জীববিজ্ঞানের জন্য আলাদা তিনটি সুসজ্জিত গবেষণাগার রয়েছে। আধুনিক যন্ত্রপাতি ও রাসায়নিক সরঞ্জামে পরিপূর্ণ প্রতিটি ল্যাব।",
+        features: ["পদার্থ ল্যাব", "রসায়ন ল্যাব", "জীববিজ্ঞান ল্যাব", "আধুনিক যন্ত্রপাতি", "নিরাপত্তা সরঞ্জাম"],
+        capacity: "প্রতি সেশনে ৩০ জন"
+      },
+      {
+        title: "কম্পিউটার ল্যাবরেটরি",
+        subtitle: "Computer Laboratory",
+        category: "প্রযুক্তি",
+        icon: "bi-pc-display",
+        description: "দুটি আধুনিক কম্পিউটার ল্যাবে মোট ৮০টি উচ্চ-কার্যক্ষমতার কম্পিউটার রয়েছে। দ্রুতগতির ইন্টারনেট ও প্রয়োজনীয় সফটওয়্যার সহ প্রতিটি কম্পিউটার সজ্জিত।",
+        features: ["৮০টি কম্পিউটার", "১০০ Mbps ইন্টারনেট", "প্রিন্টার ও স্ক্যানার", "সফটওয়্যার লাইসেন্স", "প্রোগ্রামিং শিক্ষা"],
+        capacity: "প্রতি ল্যাবে ৪০ জন"
+      },
+      {
+        title: "বহুমুখী খেলার মাঠ",
+        subtitle: "Multi-purpose Playground",
+        category: "ক্রীড়া",
+        icon: "bi-dribbble",
+        description: "বিশাল খেলার মাঠে ফুটবল, ক্রিকেট, ব্যাডমিন্টন ও অ্যাথলেটিক্সের সুব্যবস্থা রয়েছে। বার্ষিক ক্রীড়া প্রতিযোগিতাসহ নিয়মিত শারীরিক শিক্ষা কার্যক্রম পরিচালিত হয়।",
+        features: ["ফুটবল মাঠ", "ক্রিকেট পিচ", "ব্যাডমিন্টন কোর্ট", "অ্যাথলেটিক্স ট্র্যাক", "দর্শক গ্যালারি"],
+        capacity: "৫০০+ শিক্ষার্থী একসাথে"
+      },
+      {
+        title: "অডিটোরিয়াম",
+        subtitle: "Auditorium",
+        category: "সংস্কৃতি",
+        icon: "bi-camera-video-fill",
+        description: "৩০০ আসনবিশিষ্ট আধুনিক অডিটোরিয়ামে বার্ষিক পুরস্কার বিতরণী, সাংস্কৃতিক অনুষ্ঠান ও জাতীয় দিবস উদযাপন হয়। উন্নত সাউন্ড সিস্টেম ও স্টেজ আলোকসজ্জায় সজ্জিত।",
+        features: ["৩০০ আসন", "এসি সুবিধা", "প্রজেকশন সিস্টেম", "সাউন্ড সিস্টেম", "গ্রীনরুম"],
+        capacity: "৩০০ দর্শক ধারণক্ষমতা"
+      },
+      {
+        title: "শিক্ষার্থী ক্যান্টিন",
+        subtitle: "Student Canteen",
+        category: "কল্যাণ",
+        icon: "bi-cup-hot-fill",
+        description: "পরিষ্কার ও স্বাস্থ্যসম্মত ক্যান্টিনে সাশ্রয়ী মূল্যে পুষ্টিকর খাবার পরিবেশন করা হয়। সরকারি স্বাস্থ্যবিধি মেনে পরিচালিত এবং নিয়মিত মান নিয়ন্ত্রণ করা হয়।",
+        features: ["স্বাস্থ্যসম্মত রান্নাঘর", "পুষ্টিকর মেনু", "সাশ্রয়ী মূল্য", "বিশুদ্ধ পানীয় জল", "পরিষ্কার বসার ব্যবস্থা"],
+        capacity: "একসাথে ১০০ জন শিক্ষার্থী"
+      },
+      {
+        title: "প্রার্থনা কক্ষ",
+        subtitle: "Prayer Room",
+        category: "কল্যাণ",
+        icon: "bi-stars",
+        description: "ছাত্র ও ছাত্রীদের জন্য আলাদা প্রার্থনা কক্ষের ব্যবস্থা রয়েছে। নামাজের সময় অনুযায়ী বিশেষ বিরতির ব্যবস্থাও রাখা হয়।",
+        features: ["ছাত্র প্রার্থনা কক্ষ", "ছাত্রী প্রার্থনা কক্ষ", "অজুর ব্যবস্থা", "জায়নামাজ সরবরাহ", "নির্মল পরিবেশ"],
+        capacity: "প্রতিটিতে ৫০ জন"
+      },
+      {
+        title: "মিডিয়া ও ক্লাব রুম",
+        subtitle: "Media & Club Room",
+        category: "কার্যক্রম",
+        icon: "bi-camera2",
+        description: "ফটোগ্রাফি ক্লাব, বিতর্ক সমিতি, বিজ্ঞান ক্লাব ও সাহিত্য সংসদের জন্য নিজস্ব কক্ষ রয়েছে। শিক্ষার্থীরা এখানে তাদের পাঠ্যবহির্ভূত কার্যক্রম পরিচালনা করে।",
+        features: ["বিতর্ক ক্লাব", "বিজ্ঞান ক্লাব", "ফটোগ্রাফি ক্লাব", "সাহিত্য সংসদ", "আইটি ক্লাব"],
+        capacity: "প্রতিটি ক্লাবে ৩০ জন সদস্য"
+      },
+      {
+        title: "প্রাথমিক চিকিৎসা কেন্দ্র",
+        subtitle: "First Aid & Health Center",
+        category: "স্বাস্থ্য",
+        icon: "bi-heart-pulse-fill",
+        description: "অভিজ্ঞ নার্স ও প্রশিক্ষিত কর্মী দ্বারা পরিচালিত স্বাস্থ্যসেবা কেন্দ্রে প্রাথমিক চিকিৎসার সম্পূর্ণ ব্যবস্থা রয়েছে। জরুরি প্রয়োজনে নিকটস্থ হাসপাতালে রেফার করার ব্যবস্থাও আছে।",
+        features: ["প্রশিক্ষিত নার্স", "প্রাথমিক ওষুধ", "বিশ্রাম কক্ষ", "অ্যাম্বুলেন্স যোগাযোগ", "নিয়মিত স্বাস্থ্য পরীক্ষা"],
+        capacity: "সকল শিক্ষার্থীর জন্য উন্মুক্ত"
+      }
+    ];
+
+    const infrastructureRows = [
+      ["bi-buildings", "মোট ভবন সংখ্যা", "৩টি একাডেমিক ভবন"],
+      ["bi-door-open", "মোট কক্ষ সংখ্যা", "৬৫টি (শ্রেণিকক্ষ + অফিস)"],
+      ["bi-people", "মোট ধারণক্ষমতা", "১,৫০০ শিক্ষার্থী"],
+      ["bi-lightning", "বিদ্যুৎ ব্যাকআপ", "সম্পূর্ণ জেনারেটর সুবিধা"],
+      ["bi-wifi", "ইন্টারনেট সংযোগ", "১০০ Mbps ফাইবার অপটিক"],
+      ["bi-droplet", "বিশুদ্ধ পানি সরবরাহ", "ফিল্টার + আর্সেনিকমুক্ত"],
+      ["bi-camera", "নিরাপত্তা ক্যামেরা", "৩২টি CCTV ক্যামেরা"],
+      ["bi-ev-station", "যানবাহন পার্কিং", "শিক্ষক ও অভিভাবকদের জন্য"]
+    ];
+
+    const buildingDiagramItems = [
+      ["bi-door-closed", "ভবন-১ (প্রাথমিক)"],
+      ["bi-door-closed", "ভবন-২ (মাধ্যমিক)"],
+      ["bi-door-closed", "ভবন-৩ (প্রশাসন)"],
+      ["bi-book", "গ্রন্থাগার ভবন"],
+      ["bi-eyedropper", "বিজ্ঞানাগার ব্লক"],
+      ["bi-pc-display", "কম্পিউটার ব্লক"],
+      ["bi-dribbble", "খেলার মাঠ"],
+      ["bi-camera-video", "অডিটোরিয়াম"]
+    ];
+
+    const welfareCards = [
+      {
+        accent: "accent",
+        icon: "bi-shield-check-fill",
+        title: "নিরাপত্তা ব্যবস্থা",
+        description: "শিক্ষার্থীদের সর্বোচ্চ নিরাপত্তা নিশ্চিত করতে ২৪/৭ নিরাপত্তা প্রহরা ও আধুনিক নজরদারি ব্যবস্থা চালু রয়েছে।",
+        features: ["৩২টি CCTV ক্যামেরা", "২৪ ঘণ্টা নিরাপত্তা প্রহরী", "বায়োমেট্রিক প্রবেশ নিয়ন্ত্রণ", "অগ্নিনির্বাপক যন্ত্র"]
+      },
+      {
+        accent: "success",
+        icon: "bi-heart-pulse-fill",
+        title: "স্বাস্থ্যসেবা",
+        description: "বিদ্যালয় চলাকালীন যেকোনো স্বাস্থ্য সমস্যায় তাৎক্ষণিক চিকিৎসাসেবা প্রদানের জন্য প্রশিক্ষিত মেডিকেল টিম সর্বদা প্রস্তুত।",
+        features: ["প্রশিক্ষিত নার্স", "প্রাথমিক ওষুধ সরবরাহ", "নিয়মিত স্বাস্থ্য পরীক্ষা", "হাসপাতাল রেফারেল সেবা"]
+      },
+      {
+        accent: "primary",
+        icon: "bi-gender-ambiguous",
+        title: "লিঙ্গ সমতা",
+        description: "ছাত্র-ছাত্রী উভয়ের জন্য সমান সুযোগ ও পৃথক সুবিধা নিশ্চিত করা হয়েছে। মেয়েদের নিরাপত্তা ও সুরক্ষায় বিশেষ মনোযোগ দেওয়া হয়।",
+        features: ["পৃথক ওয়াশরুম", "মেয়েদের আলাদা কমনরুম", "মহিলা নিরাপত্তাকর্মী", "অ্যান্টি-বুলিং নীতি"]
+      },
+      {
+        accent: "warning",
+        icon: "bi-people-fill",
+        title: "কাউন্সেলিং সেবা",
+        description: "শিক্ষার্থীদের মানসিক স্বাস্থ্য ও পড়াশোনার চাপ মোকাবেলায় অভিজ্ঞ কাউন্সেলর দ্বারা নিয়মিত পরামর্শ সেবা প্রদান করা হয়।",
+        features: ["মানসিক স্বাস্থ্য পরামর্শ", "ক্যারিয়ার গাইডেন্স", "অভিভাবক সমন্বয়", "গোপনীয়তা নিশ্চিত"]
+      }
+    ];
+
+    const facilityGrid = document.getElementById("facilityGrid");
+    const infraTable = document.getElementById("infraTable");
+    const buildingDiagramGrid = document.getElementById("buildingDiagramGrid");
+    const welfareGrid = document.getElementById("welfareGrid");
+
+    facilityGrid.innerHTML = facilitiesData.map((item) => `
+      <div class="col-lg-6">
+        <article class="facility-card animate-fade-up">
+          <div class="row g-0 h-100">
+            <div class="col-md-5">
+              <div class="facility-card__img" aria-label="${item.title}">
+                <span class="facility-card__ribbon">${item.category}</span>
+                <span class="facility-card__status"><i class="bi bi-check-circle-fill" aria-hidden="true"></i>উপলভ্য</span>
+                <i class="bi ${item.icon}" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="facility-card__body">
+                <div>
+                  <h3 class="facility-card__title">${item.title}</h3>
+                  <div class="facility-card__subtitle">${item.subtitle}</div>
+                  <p class="facility-card__desc">${item.description}</p>
+                  <ul class="facility-features">
+                    ${item.features.map((feature) => `<li><i class="bi bi-check2" aria-hidden="true"></i>${feature}</li>`).join("")}
+                  </ul>
+                </div>
+                <div class="facility-card__footer">
+                  <span class="facility-card__capacity"><i class="bi bi-people-fill" aria-hidden="true"></i>${item.capacity}</span>
+                  <a class="facility-card__link" href="#infrastructure-details">বিস্তারিত <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    `).join("");
+
+    infraTable.innerHTML = infrastructureRows.map(([icon, label, value]) => `
+      <div class="infra-row animate-fade-up">
+        <div class="infra-row__label"><i class="bi ${icon}" aria-hidden="true"></i>${label}</div>
+        <div class="infra-row__value">${value}</div>
+      </div>
+    `).join("");
+
+    buildingDiagramGrid.innerHTML = buildingDiagramItems.map(([icon, label]) => `
+      <div class="floor-box animate-fade-up">
+        <i class="bi ${icon}" aria-hidden="true"></i>
+        <span>${label}</span>
+      </div>
+    `).join("");
+
+    welfareGrid.innerHTML = welfareCards.map((item) => `
+      <div class="col-lg-3 col-sm-6">
+        <article class="welfare-card welfare-card--${item.accent} animate-fade-up">
+          <div class="welfare-card__icon welfare-card__icon--${item.accent}"><i class="bi ${item.icon}" aria-hidden="true"></i></div>
+          <h3 class="welfare-card__title">${item.title}</h3>
+          <p class="welfare-card__desc">${item.description}</p>
+          <ul class="welfare-card__list">
+            ${item.features.map((feature) => `<li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>${feature}</li>`).join("")}
+          </ul>
+        </article>
+      </div>
+    `).join("");
+
+    const toBengaliCount = (value) => value.toLocaleString("bn-BD");
+
+    const countUp = (element) => {
+      const target = Number(String(element.dataset.target || "0").replace(/,/g, ""));
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = window.setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          window.clearInterval(timer);
+        }
+        element.textContent = toBengaliCount(Math.floor(current));
+      }, 16);
+    };
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll(".stat-count").forEach((item) => statObserver.observe(item));
+
+    document.querySelectorAll(".facility-stat-card, .welfare-card").forEach((item, index) => {
+      item.style.transitionDelay = `${(index % 4) * 0.1}s`;
+    });
+
+    document.querySelectorAll(".facility-card").forEach((item, index) => {
+      item.style.transitionDelay = `${(index % 2) * 0.12}s`;
+    });
+  </script>
+</body>
+</html>

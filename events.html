@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="bn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ইভেন্ট ও সংবাদ | আদর্শ উচ্চ বিদ্যালয় ও কলেজ</title>
+  <meta name="description" content="আদর্শ উচ্চ বিদ্যালয় ও কলেজের আসন্ন অনুষ্ঠান, সাম্প্রতিক সংবাদ, ক্যালেন্ডার ও মিডিয়া কভারেজ এক জায়গায় দেখুন।">
+  <meta property="og:title" content="ইভেন্ট ও সংবাদ | আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+  <meta property="og:description" content="Events, News & Announcements">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="events.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    body.events-page {
+      background: var(--white);
+    }
+
+    .events-page .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--white-06) 0,
+        var(--white-06) 1px,
+        transparent 1px,
+        transparent 20px
+      );
+    }
+
+    .events-page .page-hero::after {
+      right: -40px;
+      bottom: -80px;
+      top: auto;
+    }
+
+    .event-stats {
+      padding: 40px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .event-stat-card {
+      height: 100%;
+      padding: 24px 16px;
+      text-align: center;
+      background: var(--white);
+      border-right: 1px solid var(--border-color);
+    }
+
+    .event-stat-card--last {
+      border-right: 0;
+    }
+
+    .event-stat-card__icon {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      font-size: 22px;
+    }
+
+    .stat-count {
+      display: block;
+      margin: 0;
+      color: var(--primary);
+      font-family: var(--font-primary);
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .event-stat-label {
+      margin: 6px 0 0;
+      color: var(--text-secondary);
+      font-family: var(--font-bengali);
+      font-size: 14px;
+    }
+
+    .upcoming-events {
+      background: var(--gray-50);
+    }
+
+    .upcoming-event-card {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .upcoming-event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .upcoming-event-card__bar {
+      height: 5px;
+    }
+
+    .upcoming-event-card__bar--primary {
+      background: var(--primary);
+    }
+
+    .upcoming-event-card__bar--accent {
+      background: var(--accent);
+    }
+
+    .upcoming-event-card__bar--success {
+      background: var(--success);
+    }
+
+    .upcoming-event-card__body {
+      padding: 28px 24px 24px;
+    }
+
+    .event-card__header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .event-date-box {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--primary-border);
+      border-radius: var(--radius-md);
+      background: var(--primary-subtle);
+      text-align: center;
+    }
+
+    .event-date-box--accent {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .event-date-box--success {
+      border-color: var(--success);
+      background: var(--success-light);
+    }
+
+    .event-date-box__day {
+      color: var(--primary);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .event-date-box--accent .event-date-box__day {
+      color: var(--accent);
+    }
+
+    .event-date-box--success .event-date-box__day {
+      color: var(--success);
+    }
+
+    .event-date-box__month {
+      margin-top: 2px;
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .event-category-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .event-category-badge--primary {
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .event-category-badge--accent {
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .event-category-badge--success {
+      color: var(--success);
+      background: var(--success-light);
+    }
+
+    .event-category-badge--warning {
+      color: var(--warning);
+      background: var(--warning-light);
+    }
+
+    .event-card__title {
+      margin: 0 0 10px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .event-card__excerpt {
+      margin: 0 0 16px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .event-card__meta {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .event-card__meta li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border-color);
+      font-size: 13px;
+    }
+
+    .event-card__meta li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .event-card__meta i {
+      color: var(--primary);
+      min-width: 16px;
+      margin-top: 2px;
+    }
+
+    .event-card__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .archive-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .archive-filter-bar__title {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .archive-filter-bar__subtitle {
+      margin: 4px 0 0;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .archive-filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .archive-filter-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .archive-filter-button:hover,
+    .archive-filter-button.active {
+      border-color: var(--primary-border);
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .archive-item {
+      height: 100%;
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .archive-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .archive-item--accent {
+      border-left-color: var(--accent);
+    }
+
+    .archive-item--success {
+      border-left-color: var(--success);
+    }
+
+    .archive-item--warning {
+      border-left-color: var(--warning);
+    }
+
+    .archive-item__meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .archive-item__date {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .archive-item__title {
+      margin: 0 0 8px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .archive-item__excerpt {
+      margin: 0 0 14px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .archive-item__footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .archive-item__source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .archive-item__views {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .event-sidebar {
+      position: sticky;
+      top: 90px;
+    }
+
+    .sidebar-card {
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar-card + .sidebar-card {
+      margin-top: 16px;
+    }
+
+    .sidebar-card__title {
+      margin: 0 0 16px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .calendar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .calendar-header__month {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .calendar-weekday {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .calendar-day {
+      min-height: 42px;
+      padding: 0;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: var(--gray-50);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .calendar-day:hover {
+      border-color: var(--primary-border);
+      color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .calendar-day--event {
+      border-color: var(--primary-border);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .calendar-day--today {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-light);
+    }
+
+    .calendar-day__dot {
+      display: block;
+      width: 4px;
+      height: 4px;
+      margin: 4px auto 0;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .calendar-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 14px;
+      color: var(--text-secondary);
+      font-size: 12px;
+    }
+
+    .calendar-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .calendar-legend i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .calendar-legend__primary {
+      background: var(--primary);
+    }
+
+    .calendar-legend__accent {
+      background: var(--accent);
+    }
+
+    .calendar-legend__success {
+      background: var(--success);
+    }
+
+    .focus-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .focus-list li {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .focus-list li:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .focus-list i {
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .media-section {
+      background: var(--white);
+    }
+
+    .media-card {
+      height: 100%;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .media-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .media-card__img {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+
+    .media-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .media-card:hover .media-card__img img {
+      transform: scale(1.05);
+    }
+
+    .media-card__source,
+    .media-card__date {
+      position: absolute;
+      z-index: 1;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .media-card__source {
+      left: 12px;
+      bottom: 12px;
+      background: var(--white);
+      color: var(--text-primary);
+    }
+
+    .media-card__date {
+      top: 12px;
+      right: 12px;
+      background: var(--overlay-primary-dark-65);
+      color: var(--white);
+    }
+
+    .media-card__body {
+      padding: 20px;
+    }
+
+    .media-card__tag {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .media-card__title {
+      margin: 0 0 8px;
+      color: var(--text-primary);
+      font-family: var(--font-bengali);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .media-card__excerpt {
+      margin: 0 0 16px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .media-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .event-cta-strip {
+      position: relative;
+      overflow: hidden;
+      padding: 56px 0;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
+
+    .event-cta-strip::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--white-06) 0,
+        var(--white-06) 1px,
+        transparent 1px,
+        transparent 20px
+      );
+    }
+
+    .event-cta-strip__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .event-cta-strip__icon {
+      margin-bottom: 16px;
+      color: var(--warning);
+      font-size: 48px;
+    }
+
+    .event-cta-strip__title {
+      margin: 0;
+      color: var(--white);
+      font-family: var(--font-bengali);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .event-cta-strip__text {
+      max-width: 780px;
+      margin: 10px auto 0;
+      color: var(--white-80);
+      font-size: 15px;
+    }
+
+    .event-cta-strip__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .event-cta-strip__actions .btn-school-primary {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .event-cta-strip__actions .btn-school-primary:hover {
+      background: var(--primary-subtle);
+      color: var(--primary);
+    }
+
+    .event-cta-strip__actions .btn-school-outline {
+      color: var(--white);
+      border-color: var(--white-60);
+      background: transparent;
+    }
+
+    .event-cta-strip__actions .btn-school-outline:hover {
+      color: var(--white);
+      border-color: var(--white);
+      background: var(--white-10);
+    }
+
+    .archive-empty {
+      display: none;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: var(--gray-50);
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .archive-empty.is-visible {
+      display: block;
+    }
+
+    .archive-filter-note {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body class="events-page">
+  <header>
+    <div class="topbar d-none d-xl-flex">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="topbar__left">
+          <span><span aria-hidden="true">🇧🇩</span> গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</span>
+          <span>|</span>
+          <span>জাতীয় শিক্ষা সপ্তাহ ২০২৫</span>
+        </div>
+        <div class="topbar__right">
+          <span><i class="bi bi-telephone-fill" aria-hidden="true"></i> +880 2-XXXXXXXX</span>
+          <span><i class="bi bi-envelope-fill" aria-hidden="true"></i> info@adarshaschool.edu.bd</span>
+          <div class="topbar__social">
+            <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-navbar navbar navbar-expand-xl">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="আদর্শ উচ্চ বিদ্যালয় ও কলেজ">
+          <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+          <span>
+            <span class="navbar-brand__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</span>
+            <span class="navbar-brand__subtitle">Adarsha High School &amp; College, Dhaka</span>
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#schoolNavbar" aria-controls="schoolNavbar" aria-expanded="false" aria-label="নেভিগেশন খুলুন">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="schoolNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-xl-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">হোম</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">আমাদের বিদ্যালয়</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="about.html#history">ইতিহাস</a></li>
+                <li><a class="dropdown-item" href="about.html#mission">লক্ষ্য ও উদ্দেশ্য</a></li>
+                <li><a class="dropdown-item" href="institute-info.html">প্রতিষ্ঠান তথ্য</a></li>
+                <li><a class="dropdown-item" href="facilities.html">সুযোগ-সুবিধা</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">প্রশাসন</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="head-teacher.html">প্রধান শিক্ষকের বাণী</a></li>
+                <li><a class="dropdown-item" href="committee.html">পরিচালনা কমিটি</a></li>
+                <li><a class="dropdown-item" href="teachers.html">শিক্ষক-কর্মচারী</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">একাডেমিক</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="academic.html#calendar">একাডেমিক ক্যালেন্ডার</a></li>
+                <li><a class="dropdown-item" href="academic.html#routine">শ্রেণি রুটিন</a></li>
+                <li><a class="dropdown-item" href="academic.html#syllabus">সিলেবাস</a></li>
+                <li><a class="dropdown-item" href="academic.html#exam">পরীক্ষার তথ্য</a></li>
+                <li><a class="dropdown-item" href="results.html">ফলাফল</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="admission.html">ভর্তি</a></li>
+            <li class="nav-item"><a class="nav-link" href="notices.html">নোটিশ বোর্ড</a></li>
+            <li class="nav-item"><a class="nav-link active" href="events.html" aria-current="page">ইভেন্ট ও সংবাদ</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">যোগাযোগ</a></li>
+          </ul>
+
+          <div class="navbar-actions">
+            <a class="btn-school-accent" href="admission.html"><i class="bi bi-pencil-square me-1" aria-hidden="true"></i> ভর্তি আবেদন</a>
+            <button class="btn-navbar-icon" type="button" aria-label="অনুসন্ধান">
+              <i class="bi bi-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero" aria-label="ইভেন্ট ও সংবাদ">
+      <div class="container page-hero__content">
+        <div>
+          <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html"><i class="bi bi-house-fill" aria-hidden="true"></i> হোম</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">ইভেন্ট ও সংবাদ</span>
+          </nav>
+          <h1 class="page-hero__title">ইভেন্ট ও সংবাদ</h1>
+          <p class="page-hero__subtitle" lang="en">Events, News &amp; Announcements</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-stats">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-lg-3 col-sm-6">
+            <div class="event-stat-card animate-fade-up">
+              <div class="event-stat-card__icon"><i class="bi bi-calendar-check-fill" aria-hidden="true"></i></div>
+              <p class="stat-count" data-target="48">0</p>
+              <p class="event-stat-label">বার্ষিক অনুষ্ঠান</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="event-stat-card animate-fade-up">
+              <div class="event-stat-card__icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
+              <p class="stat-count" data-target="120">0</p>
+              <p class="event-stat-label">সংবাদ প্রকাশিত</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="event-stat-card animate-fade-up">
+              <div class="event-stat-card__icon"><i class="bi bi-people-fill" aria-hidden="true"></i></div>
+              <p class="stat-count" data-target="5000">0</p>
+              <p class="event-stat-label">অংশগ্রহণকারী</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="event-stat-card event-stat-card--last animate-fade-up">
+              <div class="event-stat-card__icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></div>
+              <p class="stat-count" data-target="25">0</p>
+              <p class="event-stat-label">পুরস্কার অর্জন</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding upcoming-events" aria-labelledby="upcoming-events-title">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title" id="upcoming-events-title">আসন্ন অনুষ্ঠান</h2>
+          <p class="section-header__subtitle" lang="en">Upcoming Events</p>
+          <div class="section-header__underline"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <article class="upcoming-event-card animate-fade-up">
+              <div class="upcoming-event-card__bar upcoming-event-card__bar--primary"></div>
+              <div class="upcoming-event-card__body">
+                <div class="event-card__header">
+                  <div class="event-date-box">
+                    <span class="event-date-box__day">12</span>
+                    <span class="event-date-box__month">JUN</span>
+                  </div>
+                  <span class="event-category-badge event-category-badge--primary">অনুষ্ঠান</span>
+                </div>
+                <h3 class="event-card__title">বার্ষিক সাংস্কৃতিক অনুষ্ঠান ২০২৫</h3>
+                <p class="event-card__excerpt">শিক্ষার্থীদের নৃত্য, সংগীত, আবৃত্তি ও নাট্য পরিবেশনার মাধ্যমে দিনব্যাপী সাংস্কৃতিক উৎসবের আয়োজন।</p>
+                <ul class="event-card__meta">
+                  <li><i class="bi bi-clock-fill" aria-hidden="true"></i> সকাল ১০টা - বিকেল ৪টা</li>
+                  <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> বিদ্যালয় মিলনায়তন</li>
+                  <li><i class="bi bi-person-check-fill" aria-hidden="true"></i> সাংস্কৃতিক কমিটি</li>
+                </ul>
+                <div class="event-card__actions">
+                  <a class="btn-school-primary btn-sm" href="notices.html"><i class="bi bi-bell me-1" aria-hidden="true"></i> নোটিশ দেখুন</a>
+                  <a class="btn-school-outline btn-sm" href="contact.html"><i class="bi bi-telephone me-1" aria-hidden="true"></i> যোগাযোগ</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="upcoming-event-card animate-fade-up">
+              <div class="upcoming-event-card__bar upcoming-event-card__bar--accent"></div>
+              <div class="upcoming-event-card__body">
+                <div class="event-card__header">
+                  <div class="event-date-box event-date-box--accent">
+                    <span class="event-date-box__day">18</span>
+                    <span class="event-date-box__month">JUN</span>
+                  </div>
+                  <span class="event-category-badge event-category-badge--accent">পুরস্কার</span>
+                </div>
+                <h3 class="event-card__title">মেধাবৃত্তি ও পুরস্কার বিতরণী</h3>
+                <p class="event-card__excerpt">একাডেমিক এবং সহশিক্ষা কার্যক্রমে কৃতিত্ব অর্জনকারী শিক্ষার্থীদের সম্মাননা ও স্বীকৃতি প্রদান।</p>
+                <ul class="event-card__meta">
+                  <li><i class="bi bi-clock-fill" aria-hidden="true"></i> দুপুর ১২টা - ২টা</li>
+                  <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> প্রধান সভাকক্ষ</li>
+                  <li><i class="bi bi-award-fill" aria-hidden="true"></i> পুরস্কার কমিটি</li>
+                </ul>
+                <div class="event-card__actions">
+                  <a class="btn-school-primary btn-sm" href="achievements.html"><i class="bi bi-trophy me-1" aria-hidden="true"></i> অর্জন দেখুন</a>
+                  <a class="btn-school-outline btn-sm" href="downloads.html"><i class="bi bi-download me-1" aria-hidden="true"></i> ফর্ম ডাউনলোড</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="upcoming-event-card animate-fade-up">
+              <div class="upcoming-event-card__bar upcoming-event-card__bar--success"></div>
+              <div class="upcoming-event-card__body">
+                <div class="event-card__header">
+                  <div class="event-date-box event-date-box--success">
+                    <span class="event-date-box__day">24</span>
+                    <span class="event-date-box__month">JUN</span>
+                  </div>
+                  <span class="event-category-badge event-category-badge--success">পরীক্ষা</span>
+                </div>
+                <h3 class="event-card__title">মডেল টেস্ট ও প্রশ্নোত্তর পর্ব</h3>
+                <p class="event-card__excerpt">SSC ও JSC প্রার্থীদের প্রস্তুতি জোরদার করতে বিশেষ মডেল টেস্ট, বিশ্লেষণ এবং প্রশ্নোত্তর সেশন।</p>
+                <ul class="event-card__meta">
+                  <li><i class="bi bi-clock-fill" aria-hidden="true"></i> সকাল ৯টা - দুপুর ১টা</li>
+                  <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> বিজ্ঞান ভবন</li>
+                  <li><i class="bi bi-journal-text" aria-hidden="true"></i> পরীক্ষাবিষয়ক কমিটি</li>
+                </ul>
+                <div class="event-card__actions">
+                  <a class="btn-school-primary btn-sm" href="results.html"><i class="bi bi-clipboard-data me-1" aria-hidden="true"></i> ফলাফল</a>
+                  <a class="btn-school-outline btn-sm" href="academic.html#exam"><i class="bi bi-journal-check me-1" aria-hidden="true"></i> পরীক্ষার তথ্য</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" aria-labelledby="archive-title">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="archive-filter-bar animate-fade-up">
+              <div>
+                <h2 class="archive-filter-bar__title" id="archive-title">সংবাদ আর্কাইভ</h2>
+                <p class="archive-filter-bar__subtitle">সর্বশেষ অনুষ্ঠান, সংবাদ ও ঘোষণাগুলো এখানে পাওয়া যাবে</p>
+              </div>
+              <div class="archive-filter-buttons" role="toolbar" aria-label="সংবাদ ফিল্টার">
+                <button class="archive-filter-button active" type="button" data-filter="all" aria-pressed="true">সব</button>
+                <button class="archive-filter-button" type="button" data-filter="event" aria-pressed="false">অনুষ্ঠান</button>
+                <button class="archive-filter-button" type="button" data-filter="news" aria-pressed="false">সংবাদ</button>
+                <button class="archive-filter-button" type="button" data-filter="award" aria-pressed="false">পুরস্কার</button>
+                <button class="archive-filter-button" type="button" data-filter="exam" aria-pressed="false">পরীক্ষা</button>
+                <button class="archive-filter-button" type="button" data-filter="notice" aria-pressed="false">নোটিশ</button>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between mb-3 animate-fade-up">
+              <span class="archive-filter-note">ফিল্টার করলে সংবাদ তালিকা তাৎক্ষণিকভাবে পরিবর্তিত হবে</span>
+              <span class="archive-filter-note" id="archiveCount">৬টি আইটেম</span>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-md-6" data-archive-item data-category="event">
+                <article class="archive-item animate-fade-up">
+                  <div class="archive-item__meta">
+                    <span class="event-category-badge event-category-badge--primary">অনুষ্ঠান</span>
+                    <span class="archive-item__date"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> ২৮ মে ২০২৫</span>
+                  </div>
+                  <h3 class="archive-item__title">বছরব্যাপী ক্রীড়া উৎসবের সমাপনী</h3>
+                  <p class="archive-item__excerpt">দুই দিনব্যাপী ক্রীড়া প্রতিযোগিতা, দলগত ইভেন্ট এবং পুরস্কার বিতরণের মাধ্যমে উৎসবের সফল সমাপ্তি।</p>
+                  <div class="archive-item__footer">
+                    <span class="archive-item__source"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> বিদ্যালয় সংবাদ</span>
+                    <span class="archive-item__views"><i class="bi bi-eye me-1" aria-hidden="true"></i> ১,২৪০ বার দেখা</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6" data-archive-item data-category="award">
+                <article class="archive-item archive-item--accent animate-fade-up">
+                  <div class="archive-item__meta">
+                    <span class="event-category-badge event-category-badge--accent">পুরস্কার</span>
+                    <span class="archive-item__date"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> ২০ মে ২০২৫</span>
+                  </div>
+                  <h3 class="archive-item__title">বিজ্ঞান অলিম্পিয়াডে প্রথম স্থান</h3>
+                  <p class="archive-item__excerpt">ঢাকা বিভাগীয় বিজ্ঞান অলিম্পিয়াডে আমাদের বিদ্যালয়ের শিক্ষার্থী দল অনন্য সাফল্য অর্জন করেছে।</p>
+                  <div class="archive-item__footer">
+                    <span class="archive-item__source"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> শিক্ষাবার্তা</span>
+                    <span class="archive-item__views"><i class="bi bi-eye me-1" aria-hidden="true"></i> ৯৮৫ বার দেখা</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6" data-archive-item data-category="news">
+                <article class="archive-item archive-item--success animate-fade-up">
+                  <div class="archive-item__meta">
+                    <span class="event-category-badge event-category-badge--success">সংবাদ</span>
+                    <span class="archive-item__date"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> ১৫ মে ২০২৫</span>
+                  </div>
+                  <h3 class="archive-item__title">ডিজিটাল ক্লাসরুম উদ্বোধন</h3>
+                  <p class="archive-item__excerpt">স্মার্ট ক্লাসরুম, মাল্টিমিডিয়া প্রজেক্টর ও উন্নত ল্যাব সুবিধা যুক্ত করে শিক্ষার্থীদের শেখার পরিবেশ আরও সমৃদ্ধ করা হয়েছে।</p>
+                  <div class="archive-item__footer">
+                    <span class="archive-item__source"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> শিক্ষা দিগন্ত</span>
+                    <span class="archive-item__views"><i class="bi bi-eye me-1" aria-hidden="true"></i> ২,১০৪ বার দেখা</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6" data-archive-item data-category="exam">
+                <article class="archive-item archive-item--warning animate-fade-up">
+                  <div class="archive-item__meta">
+                    <span class="event-category-badge event-category-badge--warning">পরীক্ষা</span>
+                    <span class="archive-item__date"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> ১০ মে ২০২৫</span>
+                  </div>
+                  <h3 class="archive-item__title">JSC পরীক্ষার সময়সূচি ঘোষণা</h3>
+                  <p class="archive-item__excerpt">পরীক্ষার্থীদের জন্য বিষয়ভিত্তিক রুটিন, প্রবেশপত্র নির্দেশনা এবং কেন্দ্রসংক্রান্ত তথ্য প্রকাশ করা হয়েছে।</p>
+                  <div class="archive-item__footer">
+                    <span class="archive-item__source"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> পরীক্ষাবিষয়ক নোটিশ</span>
+                    <span class="archive-item__views"><i class="bi bi-eye me-1" aria-hidden="true"></i> ১,৭৬৮ বার দেখা</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6" data-archive-item data-category="notice">
+                <article class="archive-item animate-fade-up">
+                  <div class="archive-item__meta">
+                    <span class="event-category-badge event-category-badge--primary">নোটিশ</span>
+                    <span class="archive-item__date"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> ৬ মে ২০২৫</span>
+                  </div>
+                  <h3 class="archive-item__title">গ্রীষ্মকালীন ছুটির পূর্ব ঘোষণা</h3>
+                  <p class="archive-item__excerpt">ছুটির পূর্ব প্রস্তুতি, বই ফেরত ও লাইব্রেরি ক্লিয়ারেন্স সংক্রান্ত দিকনির্দেশনা শিক্ষার্থী ও অভিভাবকদের জন্য প্রকাশিত হয়েছে।</p>
+                  <div class="archive-item__footer">
+                    <span class="archive-item__source"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> নোটিশ বোর্ড</span>
+                    <span class="archive-item__views"><i class="bi bi-eye me-1" aria-hidden="true"></i> ১,০৯২ বার দেখা</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6" data-archive-item data-category="news">
+                <article class="archive-item archive-item--accent animate-fade-up">
+                  <div class="archive-item__meta">
+                    <span class="event-category-badge event-category-badge--accent">সংবাদ</span>
+                    <span class="archive-item__date"><i class="bi bi-calendar3 me-1" aria-hidden="true"></i> ১ মে ২০২৫</span>
+                  </div>
+                  <h3 class="archive-item__title">জাতীয় শিক্ষা সপ্তাহে বিশেষ সম্মাননা</h3>
+                  <p class="archive-item__excerpt">শিক্ষা, সহশিক্ষা কার্যক্রম ও সামাজিক উদ্যোগে অবদানের স্বীকৃতি হিসেবে বিদ্যালয়টি বিশেষ সম্মাননা পেয়েছে।</p>
+                  <div class="archive-item__footer">
+                    <span class="archive-item__source"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> প্রথম আলো</span>
+                    <span class="archive-item__views"><i class="bi bi-eye me-1" aria-hidden="true"></i> ২,৪৬৫ বার দেখা</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="archive-empty mt-4" id="archiveEmpty" role="status" aria-live="polite">
+              নির্বাচিত ফিল্টারের জন্য কোনো সংবাদ পাওয়া যায়নি।
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <aside class="event-sidebar">
+              <div class="sidebar-card animate-fade-up">
+                <div class="calendar-header">
+                  <h2 class="sidebar-card__title mb-0">ইভেন্ট ক্যালেন্ডার</h2>
+                  <span class="archive-filter-note">জুন ২০২৫</span>
+                </div>
+                <div class="calendar-grid mb-2" aria-label="জুন ২০২৫ ক্যালেন্ডার">
+                  <span class="calendar-weekday">রবি</span>
+                  <span class="calendar-weekday">সোম</span>
+                  <span class="calendar-weekday">মঙ্গল</span>
+                  <span class="calendar-weekday">বুধ</span>
+                  <span class="calendar-weekday">বৃহস্পতি</span>
+                  <span class="calendar-weekday">শুক্র</span>
+                  <span class="calendar-weekday">শনি</span>
+                  <button class="calendar-day" type="button" aria-label="১ জুন ২০২৫">1</button>
+                  <button class="calendar-day" type="button" aria-label="২ জুন ২০২৫">2</button>
+                  <button class="calendar-day calendar-day--event" type="button" aria-label="৩ জুন ২০২৫, অনুষ্ঠান">3<span class="calendar-day__dot" aria-hidden="true"></span></button>
+                  <button class="calendar-day" type="button" aria-label="৪ জুন ২০২৫">4</button>
+                  <button class="calendar-day" type="button" aria-label="৫ জুন ২০২৫">5</button>
+                  <button class="calendar-day" type="button" aria-label="৬ জুন ২০২৫">6</button>
+                  <button class="calendar-day calendar-day--event" type="button" aria-label="৭ জুন ২০২৫, সংবাদ">7<span class="calendar-day__dot" aria-hidden="true"></span></button>
+                  <button class="calendar-day" type="button" aria-label="৮ জুন ২০২৫">8</button>
+                  <button class="calendar-day" type="button" aria-label="৯ জুন ২০২৫">9</button>
+                  <button class="calendar-day calendar-day--today" type="button" aria-label="১০ জুন ২০২৫, আজ">10</button>
+                  <button class="calendar-day" type="button" aria-label="১১ জুন ২০২৫">11</button>
+                  <button class="calendar-day calendar-day--event" type="button" aria-label="১২ জুন ২০২৫, সাংস্কৃতিক অনুষ্ঠান">12<span class="calendar-day__dot" aria-hidden="true"></span></button>
+                  <button class="calendar-day" type="button" aria-label="১৩ জুন ২০২৫">13</button>
+                  <button class="calendar-day" type="button" aria-label="১৪ জুন ২০২৫">14</button>
+                  <button class="calendar-day" type="button" aria-label="১৫ জুন ২০২৫">15</button>
+                  <button class="calendar-day" type="button" aria-label="১৬ জুন ২০২৫">16</button>
+                  <button class="calendar-day" type="button" aria-label="১৭ জুন ২০২৫">17</button>
+                  <button class="calendar-day calendar-day--event" type="button" aria-label="১৮ জুন ২০২৫, পুরস্কার বিতরণী">18<span class="calendar-day__dot" aria-hidden="true"></span></button>
+                  <button class="calendar-day" type="button" aria-label="১৯ জুন ২০২৫">19</button>
+                  <button class="calendar-day" type="button" aria-label="২০ জুন ২০২৫">20</button>
+                  <button class="calendar-day" type="button" aria-label="২১ জুন ২০২৫">21</button>
+                  <button class="calendar-day" type="button" aria-label="২২ জুন ২০২৫">22</button>
+                  <button class="calendar-day" type="button" aria-label="২৩ জুন ২০২৫">23</button>
+                  <button class="calendar-day calendar-day--event" type="button" aria-label="২৪ জুন ২০২৫, মডেল টেস্ট">24<span class="calendar-day__dot" aria-hidden="true"></span></button>
+                  <button class="calendar-day" type="button" aria-label="২৫ জুন ২০২৫">25</button>
+                  <button class="calendar-day" type="button" aria-label="২৬ জুন ২০২৫">26</button>
+                  <button class="calendar-day" type="button" aria-label="২৭ জুন ২০২৫">27</button>
+                  <button class="calendar-day" type="button" aria-label="২৮ জুন ২০২৫">28</button>
+                  <button class="calendar-day calendar-day--event" type="button" aria-label="২৯ জুন ২০২৫, সভা">29<span class="calendar-day__dot" aria-hidden="true"></span></button>
+                  <button class="calendar-day" type="button" aria-label="৩০ জুন ২০২৫">30</button>
+                </div>
+                <div class="calendar-legend">
+                  <span><i class="calendar-legend__primary" aria-hidden="true"></i> অনুষ্ঠান</span>
+                  <span><i class="calendar-legend__accent" aria-hidden="true"></i> পুরস্কার</span>
+                  <span><i class="calendar-legend__success" aria-hidden="true"></i> গুরুত্বপূর্ণ তারিখ</span>
+                </div>
+              </div>
+
+              <div class="sidebar-card animate-fade-up">
+                <h2 class="sidebar-card__title">এই মাসের গুরুত্বপূর্ণ বিষয়</h2>
+                <ul class="focus-list">
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> সাংস্কৃতিক অনুষ্ঠান, পুরস্কার বিতরণী এবং মডেল টেস্ট একসাথে পরিকল্পনা করা হয়েছে।</li>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> শিক্ষার্থী, অভিভাবক ও শিক্ষকদের জন্য পৃথক রেজিস্ট্রেশন ও উপস্থিতি নির্দেশিকা আছে।</li>
+                  <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> বিস্তারিত সময়সূচি ও নোটিশ বোর্ড থেকে সর্বশেষ আপডেট দেখা যাবে।</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding media-section" aria-labelledby="coverage-title">
+      <div class="container">
+        <div class="section-header animate-fade-up">
+          <h2 class="section-header__title" id="coverage-title">মিডিয়া কভারেজ</h2>
+          <p class="section-header__subtitle" lang="en">Featured Coverage &amp; Press</p>
+          <div class="section-header__underline"></div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <article class="media-card animate-fade-up">
+              <div class="media-card__img">
+                <img src="assets/images/news-1.svg" alt="জাতীয় সংবাদে বিদ্যালয়ের ফলাফল">
+                <span class="media-card__source">প্রথম আলো</span>
+                <span class="media-card__date">২৮ মে ২০২৫</span>
+              </div>
+              <div class="media-card__body">
+                <div class="media-card__tag">জাতীয় সংবাদ</div>
+                <h3 class="media-card__title">আদর্শ বিদ্যালয়ের ঐতিহাসিক SSC ফলাফল</h3>
+                <p class="media-card__excerpt">এ বছর SSC পরীক্ষায় ৯৮.৫% পাশের হার অর্জন করে বিদ্যালয়টি ঢাকা বিভাগে শীর্ষস্থানীয় প্রতিষ্ঠানের তালিকায় স্থান পেয়েছে।</p>
+                <div class="media-card__footer">
+                  <span><i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i> প্রতিবেদন</span>
+                  <span><i class="bi bi-eye me-1" aria-hidden="true"></i> ২,৩৪৫ বার দেখা</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="media-card animate-fade-up">
+              <div class="media-card__img">
+                <img src="assets/images/news-2.svg" alt="শিক্ষা সংবাদে বিজ্ঞান অলিম্পিয়াড জয়">
+                <span class="media-card__source">দৈনিক ইত্তেফাক</span>
+                <span class="media-card__date">২০ মে ২০২৫</span>
+              </div>
+              <div class="media-card__body">
+                <div class="media-card__tag">শিক্ষা সংবাদ</div>
+                <h3 class="media-card__title">বিজ্ঞান অলিম্পিয়াডে শিক্ষার্থীদের দারুণ সাফল্য</h3>
+                <p class="media-card__excerpt">বিজ্ঞান বিভাগে প্রথম স্থান অর্জনের পর শিক্ষার্থীদের কৃতিত্ব ও প্রস্তুতিমূলক কার্যক্রম নিয়ে বিশেষ প্রতিবেদন প্রকাশিত হয়েছে।</p>
+                <div class="media-card__footer">
+                  <span><i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i> প্রতিবেদন</span>
+                  <span><i class="bi bi-eye me-1" aria-hidden="true"></i> ১,৮৯০ বার দেখা</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="media-card animate-fade-up">
+              <div class="media-card__img">
+                <img src="assets/images/news-3.svg" alt="টেলিভিশন প্রতিবেদন ও ক্যাম্পাস দৃশ্য">
+                <span class="media-card__source">বাংলাদেশ টেলিভিশন</span>
+                <span class="media-card__date">১৫ মে ২০২৫</span>
+              </div>
+              <div class="media-card__body">
+                <div class="media-card__tag">টেলিভিশন সংবাদ</div>
+                <h3 class="media-card__title">ক্যাম্পাস উন্নয়ন ও স্মার্ট ক্লাসরুম উদ্যোগ</h3>
+                <p class="media-card__excerpt">আধুনিক প্রযুক্তিনির্ভর শিক্ষার পরিবেশ গড়তে স্মার্ট ক্লাসরুম, ICT ল্যাব ও পাঠসহায়ক সেবার অগ্রগতি তুলে ধরা হয়েছে।</p>
+                <div class="media-card__footer">
+                  <span><i class="bi bi-box-arrow-up-right me-1" aria-hidden="true"></i> প্রতিবেদন</span>
+                  <span><i class="bi bi-eye me-1" aria-hidden="true"></i> ৩,১২০ বার দেখা</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-cta-strip" aria-label="ইভেন্ট আপডেট">
+      <div class="container">
+        <div class="event-cta-strip__content">
+          <i class="bi bi-bell-fill event-cta-strip__icon" aria-hidden="true"></i>
+          <h2 class="event-cta-strip__title">অনুষ্ঠানের আপডেট পেতে যুক্ত থাকুন</h2>
+          <p class="event-cta-strip__text">বিদ্যালয়ের সকল অনুষ্ঠান, সংবাদ এবং গুরুত্বপূর্ণ ঘোষণার সর্বশেষ আপডেট পেতে আমাদের নোটিশ বোর্ড ও যোগাযোগ পৃষ্ঠায় নজর রাখুন।</p>
+          <div class="event-cta-strip__actions">
+            <a class="btn-school-primary" href="notices.html"><i class="bi bi-bell me-2" aria-hidden="true"></i> নোটিশ বোর্ড দেখুন</a>
+            <a class="btn-school-outline" href="contact.html"><i class="bi bi-telephone me-2" aria-hidden="true"></i> যোগাযোগ করুন</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top-strip">
+      <div class="container">
+        <div class="footer-top-strip__content">
+          <p class="footer-top-strip__title">🎓 ২০২৫ সালের ভর্তি কার্যক্রম ও আসন্ন অনুষ্ঠান চলছে</p>
+          <a class="btn-school-accent" href="admission.html">ভর্তির জন্য আবেদন করুন</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <div class="footer-logo-block">
+              <img src="assets/images/logo.svg" alt="আদর্শ উচ্চ বিদ্যালয় ও কলেজের লোগো">
+              <div>
+                <p class="footer-logo-block__title">আদর্শ উচ্চ বিদ্যালয় ও কলেজ</p>
+                <p class="footer-logo-block__subtitle">Adarsha High School &amp; College</p>
+              </div>
+            </div>
+            <hr class="footer-rule">
+            <p class="footer-description">১৯৬৫ সাল থেকে মানসম্মত শিক্ষা, মানবিক মূল্যবোধ এবং আধুনিক প্রযুক্তিনির্ভর শেখার পরিবেশ গড়ে তুলতে আমরা কাজ করে যাচ্ছি।</p>
+            <span class="footer-eiin">EIIN: 123456</span>
+            <div class="footer-social">
+              <a href="https://facebook.com" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+              <a href="https://youtube.com" aria-label="YouTube"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+              <a href="https://x.com" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h2 class="footer-heading">দ্রুত লিঙ্ক</h2>
+            <ul class="footer-links">
+              <li><a href="index.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> হোম</a></li>
+              <li><a href="about.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> আমাদের বিদ্যালয়</a></li>
+              <li><a href="head-teacher.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> প্রধান শিক্ষকের বাণী</a></li>
+              <li><a href="teachers.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> শিক্ষক-কর্মচারী</a></li>
+              <li><a href="committee.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> পরিচালনা কমিটি</a></li>
+              <li><a href="admission.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ভর্তি তথ্য</a></li>
+              <li><a href="notices.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> নোটিশ বোর্ড</a></li>
+              <li><a href="events.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ইভেন্ট ও সংবাদ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h2 class="footer-heading">একাডেমিক</h2>
+            <ul class="footer-links">
+              <li><a href="academic.html#calendar"><i class="bi bi-chevron-right" aria-hidden="true"></i> একাডেমিক ক্যালেন্ডার</a></li>
+              <li><a href="academic.html#routine"><i class="bi bi-chevron-right" aria-hidden="true"></i> শ্রেণি রুটিন</a></li>
+              <li><a href="academic.html#syllabus"><i class="bi bi-chevron-right" aria-hidden="true"></i> সিলেবাস</a></li>
+              <li><a href="academic.html#exam"><i class="bi bi-chevron-right" aria-hidden="true"></i> পরীক্ষার তথ্য</a></li>
+              <li><a href="results.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ফলাফল</a></li>
+              <li><a href="downloads.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> ডাউনলোড সেন্টার</a></li>
+              <li><a href="gallery.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> গ্যালারি</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right" aria-hidden="true"></i> যোগাযোগ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xl-3 col-lg-3 col-md-6">
+            <h2 class="footer-heading">যোগাযোগ</h2>
+            <ul class="footer-contact-list">
+              <li><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> আদর্শ রোড, মিরপুর, ঢাকা-১২১৬</li>
+              <li><i class="bi bi-telephone-fill" aria-hidden="true"></i> +880 2-XXXXXXXX</li>
+              <li><i class="bi bi-envelope-fill" aria-hidden="true"></i> info@adarshaschool.edu.bd</li>
+              <li><i class="bi bi-clock-fill" aria-hidden="true"></i> সোম–শুক্র: সকাল ৯টা – বিকেল ৫টা</li>
+            </ul>
+            <a class="mt-2 d-inline-flex align-items-center" href="contact.html">
+              <i class="bi bi-map me-2" aria-hidden="true"></i> গুগল ম্যাপে দেখুন
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__content">
+          <div class="footer-bottom__copy">© ২০২৫ আদর্শ উচ্চ বিদ্যালয় ও কলেজ। সর্বস্বত্ব সংরক্ষিত।</div>
+          <div class="footer-bottom__links">
+            <a href="privacy.html">গোপনীয়তা নীতি</a>
+            <a href="sitemap.html">সাইটম্যাপ</a>
+            <a href="grs.html">GRS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toBengaliNumber = (value) => Number(value).toLocaleString("bn-BD");
+
+      const countUp = (element) => {
+        const target = Number(element.dataset.target || 0);
+        const duration = 1800;
+        const startTime = performance.now();
+
+        const step = (currentTime) => {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 4);
+          element.textContent = toBengaliNumber(Math.floor(target * eased));
+
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          } else {
+            element.textContent = toBengaliNumber(target);
+          }
+        };
+
+        window.requestAnimationFrame(step);
+      };
+
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            countUp(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll(".stat-count").forEach((element) => counterObserver.observe(element));
+
+      const filterButtons = [...document.querySelectorAll("[data-filter]")];
+      const archiveItems = [...document.querySelectorAll("[data-archive-item]")];
+      const archiveEmpty = document.getElementById("archiveEmpty");
+      const archiveCount = document.getElementById("archiveCount");
+
+      const applyFilter = (filterValue) => {
+        let visibleCount = 0;
+
+        archiveItems.forEach((item) => {
+          const shouldShow = filterValue === "all" || item.dataset.category === filterValue;
+          item.style.display = shouldShow ? "" : "none";
+
+          if (shouldShow) {
+            visibleCount += 1;
+          }
+        });
+
+        if (archiveEmpty) {
+          archiveEmpty.classList.toggle("is-visible", visibleCount === 0);
+        }
+
+        if (archiveCount) {
+          archiveCount.textContent = `${toBengaliNumber(visibleCount)}টি আইটেম`;
+        }
+      };
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filterValue = button.dataset.filter || "all";
+
+          filterButtons.forEach((filterButton) => {
+            const isActive = filterButton === button;
+            filterButton.classList.toggle("active", isActive);
+            filterButton.setAttribute("aria-pressed", String(isActive));
+          });
+
+          applyFilter(filterValue);
+        });
+      });
+
+      applyFilter("all");
+
+      document.querySelectorAll(".upcoming-event-card, .archive-item, .media-card, .sidebar-card").forEach((element, index) => {
+        element.style.transitionDelay = `${(index % 4) * 0.08}s`;
+      });
+    });
+  </script>
+</body>
+</html>
